@@ -1,0 +1,10 @@
+name: dart2_benchmarks
+version: 0.0.1
+
+environment:
+  sdk: '>2.0.0'
+
+
+dependencies:
+  stagexl: ^1.4.4
+  stagexl_spine: ^0.10.1
