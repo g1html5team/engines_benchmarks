@@ -1,0 +1,33 @@
+{
+  "name": "pixijs",
+  "version": "1.0.0",
+  "description": "Environnement de test pour TypeScript + PixiJs",
+  "dependencies": {
+    "@types/html-webpack-plugin": "^3.2.2",
+    "pixi.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.0.4",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g1html5team/engines_benchmarks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g1html5team/engines_benchmarks/issues"
+  },
+  "homepage": "https://github.com/g1html5team/engines_benchmarks#readme"
+}
