@@ -5,8 +5,10 @@
     "module": "es6",
     "target": "es5",
     "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types", "./custom_typings"]
   },
   "exclude": [
     "node_modules"

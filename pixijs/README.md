@@ -32,3 +32,4 @@ ou plusieurs bundle tout en gérant les dépendences entre ces modules.
 
 - Ajouter un linter (https://eslint.org/blog/2019/01/future-typescript-eslint)
 - Optimiser webpack (https://webpack.js.org/guides/build-performance/#typescript-loader)
+- Resizer automatiquement le canvas
