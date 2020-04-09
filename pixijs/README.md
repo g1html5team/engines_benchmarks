@@ -13,9 +13,9 @@ Pour cela exécuter la commande:
 ```npm install```
 
 ## Utilisation
-Afin de lancer le projet, exécuter la command:
+Afin de lancer le projet, exécuter la commande:
 
-```npm start```
+```npm run start```
 
 ## Plus d'information
 
@@ -32,4 +32,6 @@ ou plusieurs bundle tout en gérant les dépendences entre ces modules.
 
 - Ajouter un linter (https://eslint.org/blog/2019/01/future-typescript-eslint)
 - Optimiser webpack (https://webpack.js.org/guides/build-performance/#typescript-loader)
+- Gérer la mise en production (https://webpack.js.org/guides/production/)
+- Comparer Parcel et Webpack (https://parceljs.org/)
 - Resizer automatiquement le canvas

@@ -4,7 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.ts',
+    entry: {
+        examples: './src/examples/examples.ts',
+        container: './src/examples/examples/demos-basic/container.ts',
+        transparent: './src/examples/examples/demos-basic/transparent-background.ts',
+    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
@@ -12,7 +16,19 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'PixiJS',
+            title: 'PixiJS - Examples',
+            template: './src/examples/examples.html',
+            chunks: ['examples'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'container.html',
+            title: 'PixiJS - Container',
+            chunks: ['container'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'transparent.html',
+            title: 'PixiJS - Tranparent background',
+            chunks: ['transparent'],
         }),
     ],
     module: {
