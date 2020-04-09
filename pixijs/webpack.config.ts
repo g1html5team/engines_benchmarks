@@ -8,6 +8,7 @@ module.exports = {
         examples: './src/examples/examples.ts',
         container: './src/examples/examples/demos-basic/container.ts',
         transparent: './src/examples/examples/demos-basic/transparent-background.ts',
+        tinting: './src/examples/examples/demos-basic/tinting.ts',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -29,6 +30,11 @@ module.exports = {
             filename: 'transparent.html',
             title: 'PixiJS - Tranparent background',
             chunks: ['transparent'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tinting.html',
+            title: 'PixiJS - Tinting',
+            chunks: ['tinting'],
         }),
     ],
     module: {
