@@ -1,59 +1,68 @@
-import '../styles.css';
-import EggHead from '../assets/eggHead.png';
 import * as PIXI from 'pixi.js';
+import '../styles.css';
+import BgRotate from '../assets/bg_rotate.jpg';
+import FlowerTop from '../assets/flowerTop.png';
 import { MovingSprite } from './model/moving-sprite';
 
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// Holder to store the aliens
-const aliens: MovingSprite[] = [];
+// Create a new background sprite
+const background = PIXI.Sprite.from(BgRotate);
+background.width = app.screen.width;
+background.height = app.screen.height;
+app.stage.addChild(background);
+
+// Create an array to store a reference to the dudes
+const dudeArray: MovingSprite[] = [];
 
 const totalDudes = 20;
 
 for (let i = 0; i < totalDudes; i++) {
     // Create a new Sprite that uses the image name that we just generated as its source
-    const dude = PIXI.Sprite.from(EggHead) as MovingSprite;
+    const dude = PIXI.Sprite.from(FlowerTop) as MovingSprite;
 
-    // Set the anchor point so the texture is centered on the sprite
     dude.anchor.set(0.5);
 
-    // Set a random scale for the dude - no point them all being the same size!
+    // Set a random scale for the dude
     dude.scale.set(0.8 + Math.random() * 0.3);
 
-    // Finally lets set the dude to be at a random position..
-    dude.x = Math.random() * app.screen.width;
-    dude.y = Math.random() * app.screen.height;
+    // Finally let's set the dude to be at a random position...
+    dude.x = Math.floor(Math.random() * app.screen.width);
+    dude.y = Math.floor(Math.random() * app.screen.height);
 
-    dude.tint = Math.random() * 0xFFFFFF;
+    // The important bit of this example, this is how you change the default blend mode of the sprite
+    dude.blendMode = PIXI.BLEND_MODES.ADD;
 
-    // Create some extra properties that will control movement :
-    // Create a random direction in radians. This is a number between 0 and PI*2 which is the equivalent of 0 - 360 degrees
+    // Create some extra properties that will control movement
     dude.direction = Math.random() * Math.PI * 2;
 
     // This number will be used to modify the direction of the dude over time
     dude.turningSpeed = Math.random() - 0.8;
 
-    // create a random speed for the dude between 2 - 4
+    // Create a random speed for the dude between 0 - 2
     dude.speed = 2 + Math.random() * 2;
 
-    // finally we push the dude into the aliens array so it it can be easily accessed later
-    aliens.push(dude);
+    // Finally we push the dude into the dudeArray so it it can be easily accessed later
+    dudeArray.push(dude);
 
     app.stage.addChild(dude);
 }
 
 // create a bounding box for the little dudes
 const dudeBoundsPadding = 100;
-const dudeBounds = new PIXI.Rectangle(-dudeBoundsPadding,
+
+const dudeBounds = new PIXI.Rectangle(
+    -dudeBoundsPadding,
     -dudeBoundsPadding,
     app.screen.width + dudeBoundsPadding * 2,
-    app.screen.height + dudeBoundsPadding * 2);
+    app.screen.height + dudeBoundsPadding * 2,
+);
 
 app.ticker.add(() => {
-    // iterate through the dudes and update their position
-    for (let i = 0; i < aliens.length; i++) {
-        const dude = aliens[i];
+    // iterate through the dudes and update the positions
+    for (let i = 0; i < dudeArray.length; i++) {
+        const dude = dudeArray[i];
         dude.direction += dude.turningSpeed * 0.01;
         dude.x += Math.sin(dude.direction) * dude.speed;
         dude.y += Math.cos(dude.direction) * dude.speed;
