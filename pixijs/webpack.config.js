@@ -14,6 +14,7 @@ module.exports = {
     particle: './src/examples/examples/demos_basic/particle_container.ts',
     blend: './src/examples/examples/demos_basic/blend_mode.ts',
     simple_plane: './src/examples/examples/demos_basic/simple_plane.ts',
+    slots: './src/examples/examples/demos_advanced/slots.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -80,9 +81,14 @@ module.exports = {
       chunks: ['blend'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'simple-plane.html',
+      filename: 'simple_plane.html',
       title: 'PixiJS - Simple Plane',
       chunks: ['simple_plane'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'slots.html',
+      title: 'PixiJS - Simple Plane',
+      chunks: ['slots'],
     }),
   ],
   module: {
