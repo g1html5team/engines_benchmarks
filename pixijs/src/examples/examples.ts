@@ -4,36 +4,38 @@ const gameLinks = document.body.getElementsByClassName('game-link');
 
 let gameURL: string;
 
-for (let i = 0; i < gameLinks.length; i++) {
-    const gameLink = gameLinks[i];
-    gameLink.addEventListener('click', () => {
-        // Set game title
-        const gameTitle = document.getElementById('game-title');
-        gameTitle.innerText = gameLink.textContent;
+function generateIFrameContent(): void {
+  // Remove all iFrames and content
+  const iframes = document.querySelectorAll('iframe');
+  for (let i = 0; i < iframes.length; i++) {
+    iframes[i].parentNode.removeChild(iframes[i]);
+  }
 
-        // Set list item selected
-        for (let j = 0; j < gameLinks.length; j++) {
-            gameLinks[j].classList.remove('selected');
-        }
-        gameLink.classList.add('selected');
+  // Create a new iframe
+  const iframe = document.createElement('iframe');
 
-        gameURL = `${gameLink.getAttribute('data-src')}.html`;
-        generateIFrameContent();
-    });
+  const gameContainer = document.getElementById('game-container');
+  gameContainer.appendChild(iframe);
+
+  iframe.src = gameURL;
 }
 
-function generateIFrameContent() {
-    // Remove all iFrames and content
-    const iframes = document.querySelectorAll('iframe');
-    for (let i = 0; i < iframes.length; i++) {
-        iframes[i].parentNode.removeChild(iframes[i]);
-    }
+function onClick(gameLink: Element): void {
+  // Set game title
+  const gameTitle = document.getElementById('game-title');
+  gameTitle.innerText = gameLink.textContent;
 
-    // Create a new iframe
-    const iframe = document.createElement('iframe');
+  // Set list item selected
+  for (let j = 0; j < gameLinks.length; j++) {
+    gameLinks[j].classList.remove('selected');
+  }
+  gameLink.classList.add('selected');
 
-    const gameContainer = document.getElementById('game-container');
-    gameContainer.appendChild(iframe);
+  gameURL = `${gameLink.getAttribute('data-src')}.html`;
+  generateIFrameContent();
+}
 
-    iframe.src = gameURL;
+for (let i = 0; i < gameLinks.length; i++) {
+  const gameLink = gameLinks[i];
+  gameLink.addEventListener('click', () => onClick(gameLink));
 }

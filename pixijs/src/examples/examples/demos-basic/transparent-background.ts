@@ -1,6 +1,6 @@
 import '../styles.css';
-import Bunny from '../assets/bunny.png';
 import * as PIXI from 'pixi.js';
+import Bunny from '../assets/bunny.png';
 
 const app = new PIXI.Application({ transparent: true });
 
@@ -19,6 +19,6 @@ bunny.y = app.screen.height / 2;
 app.stage.addChild(bunny);
 
 app.ticker.add(() => {
-    // just for fun, let's rotate mr rabbit a little
-    bunny.rotation += 0.1;
+  // just for fun, let's rotate mr rabbit a little
+  bunny.rotation += 0.1;
 });

@@ -12,6 +12,13 @@ Pour cela exécuter la commande:
 
 ```npm install```
 
+### Configurer WebStorm
+
+#### Linter
+todo
+![Enable linter](./doc/enable_linter.png)
+![Enable prettier](./doc/enable_prettier.png)
+
 ## Utilisation
 Afin de lancer le projet, exécuter la commande:
 
