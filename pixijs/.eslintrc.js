@@ -18,5 +18,6 @@ module.exports = {
     quotes: 'error',
     'linebreak-style': 'off', // TODO à réactiver et voir si pas mieux d'utiliser LF
     'no-plusplus': 'off',
+    'prefer-default-export': 'off',
   },
 };

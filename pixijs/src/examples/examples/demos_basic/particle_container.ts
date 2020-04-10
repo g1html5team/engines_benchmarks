@@ -1,7 +1,7 @@
 import '../styles.css';
 import * as PIXI from 'pixi.js';
 import MaggotBitmap from '../assets/maggot_tiny.png';
-import { MovingSprite } from './model/moving-sprite';
+import { MovingSprite } from './model/moving_sprite';
 
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
