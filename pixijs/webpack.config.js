@@ -15,6 +15,7 @@ module.exports = {
     blend: './src/examples/examples/demos_basic/blend_mode.ts',
     simple_plane: './src/examples/examples/demos_basic/simple_plane.ts',
     slots: './src/examples/examples/demos_advanced/slots.ts',
+    scratchcard: './src/examples/examples/demos_advanced/scratchcard.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -89,6 +90,11 @@ module.exports = {
       filename: 'slots.html',
       title: 'PixiJS - Slots',
       chunks: ['slots'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'scratchcard.html',
+      title: 'PixiJS - Scratchcard',
+      chunks: ['scratchcard'],
     }),
   ],
   module: {
