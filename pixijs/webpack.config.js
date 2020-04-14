@@ -16,6 +16,9 @@ module.exports = {
     simple_plane: './src/examples/examples/demos_basic/simple_plane.ts',
     slots: './src/examples/examples/demos_advanced/slots.ts',
     scratchcard: './src/examples/examples/demos_advanced/scratchcard.ts',
+    basic: './src/examples/examples/sprite/basic.ts',
+    texture: './src/examples/examples/sprite/texture_swap.ts',
+    animated: './src/examples/examples/sprite/animated_sprite.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -95,6 +98,21 @@ module.exports = {
       filename: 'scratchcard.html',
       title: 'PixiJS - Scratchcard',
       chunks: ['scratchcard'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'basic.html',
+      title: 'PixiJS - Basic',
+      chunks: ['basic'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'texture_swap.html',
+      title: 'PixiJS - Texture Swap',
+      chunks: ['texture'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'animated_sprite.html',
+      title: 'PixiJS - Texture Swap',
+      chunks: ['animated'],
     }),
   ],
   module: {
