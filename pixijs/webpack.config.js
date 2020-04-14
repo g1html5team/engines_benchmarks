@@ -87,7 +87,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'slots.html',
-      title: 'PixiJS - Simple Plane',
+      title: 'PixiJS - Slots',
       chunks: ['slots'],
     }),
   ],

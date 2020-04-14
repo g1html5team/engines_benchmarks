@@ -1,6 +1,5 @@
 import '../styles.css';
 import * as PIXI from 'pixi.js';
-import { Tween, TweenUtils } from './model/tween';
 import { Slot } from './model/slot';
 
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
@@ -9,9 +8,6 @@ document.body.appendChild(app.view);
 const REEL_WIDTH = 160;
 const SYMBOL_SIZE = 150;
 
-const tweens: Tween[] = [];
-
-// onAssetsLoaded handler builds the example.
 function onAssetsLoaded(): void {
   const symbolsTextures = [
     PIXI.Texture.from('eggHead.png'),
@@ -21,7 +17,7 @@ function onAssetsLoaded(): void {
   ];
 
   // Create the slot
-  const slot: Slot = new Slot(symbolsTextures);
+  const slot: Slot = new Slot(symbolsTextures, REEL_WIDTH, SYMBOL_SIZE, app.ticker);
   app.stage.addChild(slot);
 
   // Build top & bottom covers and position slot
@@ -72,64 +68,7 @@ function onAssetsLoaded(): void {
   // Set the interactivity
   bottom.interactive = true;
   bottom.buttonMode = true;
-  bottom.addListener('pointerdown', () => {
-    tweens.push(...slot.spin());
-  });
-
-  // Listen for animate update.
-  app.ticker.add(() => {
-    // Update the slots.
-    for (let i = 0; i < slot.reels.length; i++) {
-      const r = slot.reels[i];
-      // Update blur filter y amount based on speed.
-      // This would be better if calculated with time in mind also. Now blur depends on frame rate.
-      r.blur.blurY = (r.position - r.previousPosition) * 8;
-      r.previousPosition = r.position;
-
-      // Update symbol positions on reel.
-      for (let j = 0; j < r.symbols.length; j++) {
-        const s = r.symbols[j];
-        const prevy = s.y;
-        s.y = ((r.position + j) % r.symbols.length) * SYMBOL_SIZE - SYMBOL_SIZE;
-        if (s.y < 0 && prevy > SYMBOL_SIZE) {
-          // Detect going over and swap a texture.
-          // This should in proper product be determined from some logical reel.
-          s.texture = symbolsTextures[Math.floor(Math.random() * symbolsTextures.length)];
-          const scale = Math.min(SYMBOL_SIZE / s.texture.width, SYMBOL_SIZE / s.texture.height);
-          s.scale.x = scale;
-          s.scale.y = scale;
-          s.x = Math.round((SYMBOL_SIZE - s.width) / 2);
-        }
-      }
-    }
-  });
+  bottom.addListener('pointerdown', () => slot.spin());
 }
 
 app.loader.add('spritesheet', 'examples/examples/assets/spritesheet/monsters.json').load(onAssetsLoaded);
-
-// Listen for animate update.
-app.ticker.add(() => {
-  const now = Date.now();
-  const remove = [];
-  for (let i = 0; i < tweens.length; i++) {
-    const tween = tweens[i];
-    const phase = Math.min(1, (now - tween.start) / tween.time);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (tween.object as any)[tween.property] = TweenUtils.lerp(
-      tween.propertyBeginValue,
-      tween.target,
-      tween.easing(phase),
-    );
-    if (tween.change) tween.change(tween);
-    if (phase === 1) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (tween.object as any)[tween.property] = tween.target;
-      if (tween.complete) tween.complete(tween);
-      remove.push(tween);
-    }
-  }
-  for (let i = 0; i < remove.length; i++) {
-    tweens.splice(tweens.indexOf(remove[i]), 1);
-  }
-});
