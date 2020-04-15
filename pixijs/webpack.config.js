@@ -24,6 +24,8 @@ module.exports = {
     simple_graphics: './src/examples/examples/graphics/simple.ts',
     advanced_graphics: './src/examples/examples/graphics/advanced.ts',
     dynamic_graphics: './src/examples/examples/graphics/dynamic.ts',
+    click: './src/examples/examples/interaction/click.ts',
+    hitarea: './src/examples/examples/interaction/hitarea.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -150,6 +152,16 @@ module.exports = {
       filename: 'dynamic_graphics.html',
       title: 'PixiJS - Dynamic Graphics',
       chunks: ['dynamic_graphics'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'click.html',
+      title: 'PixiJS - Click',
+      chunks: ['click'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'hitarea.html',
+      title: 'PixiJS - Hitarea',
+      chunks: ['hitarea'],
     }),
   ],
   module: {
