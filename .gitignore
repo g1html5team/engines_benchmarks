@@ -2,3 +2,4 @@ _*
 .idea/
 .tools/
 .dart_tool/
+.packages
