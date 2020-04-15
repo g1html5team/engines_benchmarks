@@ -19,6 +19,8 @@ module.exports = {
     basic: './src/examples/examples/sprite/basic.ts',
     texture: './src/examples/examples/sprite/texture_swap.ts',
     animated: './src/examples/examples/sprite/animated_sprite.ts',
+    text: './src/examples/examples/text/text.ts',
+    bitmap_text: './src/examples/examples/text/bitmap_text.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -43,6 +45,13 @@ module.exports = {
       },
       {
         from: 'src/**/*.png',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(4, targetPath.length);
+        },
+      },
+      {
+        from: 'src/**/*.xml',
         to: './',
         transformPath(targetPath) {
           return targetPath.substring(4, targetPath.length);
@@ -113,6 +122,16 @@ module.exports = {
       filename: 'animated_sprite.html',
       title: 'PixiJS - Texture Swap',
       chunks: ['animated'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'text.html',
+      title: 'PixiJS - Text',
+      chunks: ['text'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'bitmap_text.html',
+      title: 'PixiJS - Bitmap Text',
+      chunks: ['bitmap_text'],
     }),
   ],
   module: {
