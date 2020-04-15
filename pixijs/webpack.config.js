@@ -26,6 +26,9 @@ module.exports = {
     dynamic_graphics: './src/examples/examples/graphics/dynamic.ts',
     click: './src/examples/examples/interaction/click.ts',
     hitarea: './src/examples/examples/interaction/hitarea.ts',
+    masks_graphics: './src/examples/examples/masks/graphics.ts',
+    masks_sprite: './src/examples/examples/masks/sprite.ts',
+    masks_filter: './src/examples/examples/masks/filter.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -162,6 +165,21 @@ module.exports = {
       filename: 'hitarea.html',
       title: 'PixiJS - Hitarea',
       chunks: ['hitarea'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'masks_graphics.html',
+      title: 'PixiJS - Masks Graphics',
+      chunks: ['masks_graphics'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'masks_sprite.html',
+      title: 'PixiJS - Masks Sprite',
+      chunks: ['masks_sprite'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'masks_filter.html',
+      title: 'PixiJS - Masks Filter',
+      chunks: ['masks_filter'],
     }),
   ],
   module: {

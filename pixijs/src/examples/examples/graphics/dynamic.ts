@@ -53,11 +53,11 @@ graphics.lineTo(600, 300);
 
 app.stage.addChild(graphics);
 
-// let's create a moving shape
-const thing = new PIXI.Graphics();
-app.stage.addChild(thing);
-thing.x = 800 / 2;
-thing.y = 600 / 2;
+// Let's create a moving shape
+const movingShape = new PIXI.Graphics();
+app.stage.addChild(movingShape);
+movingShape.x = 800 / 2;
+movingShape.y = 600 / 2;
 
 let count = 0;
 
@@ -80,16 +80,16 @@ app.renderer.plugins.interaction.on('pointerdown', onPointerDown);
 app.ticker.add(() => {
   count += 0.1;
 
-  thing.clear();
-  thing.lineStyle(10, 0xff0000, 1);
-  thing.beginFill(0xffff00, 0.5);
+  movingShape.clear();
+  movingShape.lineStyle(10, 0xff0000, 1);
+  movingShape.beginFill(0xffff00, 0.5);
 
-  thing.moveTo(-120 + Math.sin(count) * 20, -100 + Math.cos(count) * 20);
-  thing.lineTo(120 + Math.cos(count) * 20, -100 + Math.sin(count) * 20);
-  thing.lineTo(120 + Math.sin(count) * 20, 100 + Math.cos(count) * 20);
-  thing.lineTo(-120 + Math.cos(count) * 20, 100 + Math.sin(count) * 20);
-  thing.lineTo(-120 + Math.sin(count) * 20, -100 + Math.cos(count) * 20);
-  thing.closePath();
+  movingShape.moveTo(-120 + Math.sin(count) * 20, -100 + Math.cos(count) * 20);
+  movingShape.lineTo(120 + Math.cos(count) * 20, -100 + Math.sin(count) * 20);
+  movingShape.lineTo(120 + Math.sin(count) * 20, 100 + Math.cos(count) * 20);
+  movingShape.lineTo(-120 + Math.cos(count) * 20, 100 + Math.sin(count) * 20);
+  movingShape.lineTo(-120 + Math.sin(count) * 20, -100 + Math.cos(count) * 20);
+  movingShape.closePath();
 
-  thing.rotation = count * 0.1;
+  movingShape.rotation = count * 0.1;
 });
