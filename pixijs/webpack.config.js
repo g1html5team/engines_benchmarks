@@ -29,6 +29,8 @@ module.exports = {
     masks_graphics: './src/examples/examples/masks/graphics.ts',
     masks_sprite: './src/examples/examples/masks/sprite.ts',
     masks_filter: './src/examples/examples/masks/filter.ts',
+    dragon: './src/examples/examples/spine/dragon.ts',
+    spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -60,6 +62,13 @@ module.exports = {
       },
       {
         from: 'src/**/*.xml',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(4, targetPath.length);
+        },
+      },
+      {
+        from: 'src/**/*.atlas',
         to: './',
         transformPath(targetPath) {
           return targetPath.substring(4, targetPath.length);
@@ -180,6 +189,16 @@ module.exports = {
       filename: 'masks_filter.html',
       title: 'PixiJS - Masks Filter',
       chunks: ['masks_filter'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'dragon.html',
+      title: 'PixiJS - Dragon',
+      chunks: ['dragon'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'spineboy_pro.html',
+      title: 'PixiJS - Spineboy Pro',
+      chunks: ['spineboy_pro'],
     }),
   ],
   module: {
