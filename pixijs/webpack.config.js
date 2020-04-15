@@ -21,6 +21,9 @@ module.exports = {
     animated: './src/examples/examples/sprite/animated_sprite.ts',
     text: './src/examples/examples/text/text.ts',
     bitmap_text: './src/examples/examples/text/bitmap_text.ts',
+    simple_graphics: './src/examples/examples/graphics/simple.ts',
+    advanced_graphics: './src/examples/examples/graphics/advanced.ts',
+    dynamic_graphics: './src/examples/examples/graphics/dynamic.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -132,6 +135,21 @@ module.exports = {
       filename: 'bitmap_text.html',
       title: 'PixiJS - Bitmap Text',
       chunks: ['bitmap_text'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'simple_graphics.html',
+      title: 'PixiJS - Simple Graphics',
+      chunks: ['simple_graphics'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'advanced_graphics.html',
+      title: 'PixiJS - Advanced Graphics',
+      chunks: ['advanced_graphics'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'dynamic_graphics.html',
+      title: 'PixiJS - Dynamic Graphics',
+      chunks: ['dynamic_graphics'],
     }),
   ],
   module: {
