@@ -3,6 +3,17 @@ body {
     color: white;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+    padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #647086;
+    border-radius: 4px;
+}
+
 .main-menu {
     position: fixed;
     top: 0;
@@ -11,7 +22,12 @@ body {
     width: 250px;
     overflow: auto;
     background: #38404e;
-    padding: 25px 0 50px;
+    padding: 25px 0;
+}
+
+.main-menu .section-header {
+    padding: 0 20px 20px;
+    font-size: 18px;
 }
 
 .main-menu .nav-header {
@@ -24,7 +40,7 @@ body {
 .main-menu ul {
     list-style: none;
     margin: 0;
-    padding: 5px 0 10px;
+    padding: 5px 0 15px;
     color: #919bac;
 }
 
@@ -54,7 +70,8 @@ body {
     bottom: 0;
     left: 250px;
     background: #272d37;
-    padding: 0 10%;
+    padding: 0 10% 20px 10%;
+    overflow: auto;
 }
 
 .main-content h1 {
