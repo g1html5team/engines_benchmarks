@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
+    home: './src/home.ts',
     examples: './src/examples/examples.ts',
     container: './src/examples/examples/demos_basic/container.ts',
     transparent: './src/examples/examples/demos_basic/transparent_background.ts',
@@ -76,6 +77,12 @@ module.exports = {
       },
     ]),
     new HtmlWebpackPlugin({
+      title: 'TypeScript & PixiJS',
+      template: './src/home.html',
+      chunks: ['home'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'examples.html',
       title: 'PixiJS - Examples',
       template: './src/examples/examples.html',
       chunks: ['examples'],
@@ -199,6 +206,12 @@ module.exports = {
       filename: 'spineboy_pro.html',
       title: 'PixiJS - Spineboy Pro',
       chunks: ['spineboy_pro'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'benchmarks.html',
+      title: 'PixiJS - Spineboy Pro',
+      template: './src/benchmarks/benchmark.html',
+      chunks: [''],
     }),
   ],
   module: {
