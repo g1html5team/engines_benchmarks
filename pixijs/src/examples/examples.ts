@@ -1,3 +1,4 @@
+import '../styles.css';
 import './examples.css';
 
 const gameLinks = document.body.getElementsByClassName('game-link');

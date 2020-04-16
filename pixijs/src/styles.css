@@ -1,0 +1,60 @@
+body {
+  font-family: Roboto, sans-serif;
+  color: white;
+  background: #272d37;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #647086;
+  border-radius: 4px;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.home-title {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.button-container .button {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  min-width: 170px;
+  background-color: #38404e;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  border: 3px solid #38404e;
+  padding: 15px 32px;
+  text-align: center;
+  margin: 16px 5px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-container .button:hover {
+  background-color: white;
+  color: #272d37;
+  border: 3px solid #38404e;
+}
