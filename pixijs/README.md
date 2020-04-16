@@ -6,7 +6,7 @@
 Afin de tester l'environnement, vous devez avoir NodeJS et NPM installé sur votre machine.  
 Ces deux outils peuvent être installés via l'[installateur de NodeJS](https://nodejs.org/en/download/).
 
-### Installer les dépendences
+### Installer les dépendances
 Une fois Node et NPM installés, il faut télécharger les modules node utilisés par le projet.  
 Pour cela exécuter la commande:
 
@@ -35,7 +35,7 @@ Les changements dans les fichiers du projet sont automatiquement détectés et l
 
 ### Webpack
 Webpack est un _static module bundler_ pour JavaScript. Il permet de regrouper les différents modules d'un projet en un 
-ou plusieurs bundle tout en gérant les dépendences entre ces modules.
+ou plusieurs bundle tout en gérant les dépendances entre ces modules.
 - [Core concepts](https://webpack.js.org/concepts/)
 - [Getting started](https://webpack.js.org/guides/getting-started/)
 - [Webpack with TypeScript](https://webpack.js.org/guides/typescript/)
