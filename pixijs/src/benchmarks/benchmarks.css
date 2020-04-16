@@ -1,0 +1,67 @@
+.benchmarks-title {
+  text-align: center;
+  font-size: 36px;
+  padding: 20px;
+}
+
+.settings-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.outset-fieldset {
+  border-style: outset;
+  border-color: #38404e;
+}
+
+.user-infos {
+  display: inline-block;
+  width: 45%;
+}
+
+.server-infos {
+  display: inline-block;
+  width: 45%;
+  position: absolute;
+  right: 0;
+}
+
+.benchmark-settings {
+  margin-top: 20px;
+}
+
+.settings-container label {
+  display: inline-block;
+  padding: 3px 0;
+}
+
+.settings-container .value {
+  width: 75%;
+  float: right;
+}
+
+.settings-container .inline-setting {
+  width: 45%;
+  display: inline-block;
+}
+
+.settings-container .inline-setting.right {
+  float: right;
+}
+
+.settings-container input.value,
+.settings-container select.value,
+.settings-container .value input {
+  border: 1px solid #38404e;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.settings-container input.small {
+  width: 25%;
+}
+
+.row {
+  padding: 5px 0;
+}

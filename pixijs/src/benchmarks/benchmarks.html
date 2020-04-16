@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<h1 class="benchmarks-title">Benchmarks</h1>
+<div class="settings-container">
+    <fieldset class="user-infos outset-fieldset">
+        <legend>User Infos</legend>
+        <div class="row">
+            <label for="user">User</label>
+            <input id="user" class="value" type="text">
+        </div>
+        <div class="row">
+            <label for="device">Device</label>
+            <select name="device" id="device" class="value">
+                <option value="desktop">Desktop</option>
+                <option value="mobile">Mobile</option>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset class="server-infos outset-fieldset">
+        <legend>Server Infos</legend>
+        <div class="row">
+            <label for="ip">IP</label>
+            <input id="ip" class="value" type="text">
+        </div>
+        <div class="row">
+            <label for="port">Port</label>
+            <input id="port" class="value" type="text">
+        </div>
+    </fieldset>
+    <fieldset class="benchmark-settings outset-fieldset">
+        <legend>Benchmark Settings</legend>
+        <div class="row">
+            <div class="inline-setting">
+                <label for="duration">Duration</label>
+                <input id="duration" class="value" type="text">
+            </div>
+            <div class="inline-setting right">
+                <label>Canvas</label>
+                <span class="value">
+                    <input class="small" type="text" placeholder="width"> x <input class="small" type="text" placeholder="height">
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</body>
+</html>
