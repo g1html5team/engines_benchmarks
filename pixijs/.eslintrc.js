@@ -13,7 +13,6 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   rules: {
-    'sort-imports': 'warn',
     'max-len': ['error', 120],
     quotes: 'error',
     'linebreak-style': 'off', // TODO à réactiver et voir si pas mieux d'utiliser LF
