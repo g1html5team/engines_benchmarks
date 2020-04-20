@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Environnement de test pour TypeScript + PixiJs",
   "dependencies": {
+    "axios": "^0.19.2",
     "pixi-spine": "^2.0.5",
-    "pixi.js": "^5.2.1"
+    "pixi.js": "^5.2.1",
+    "toastr": "^2.1.4",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "@types/html-webpack-plugin": "^3.2.2",
+    "@types/toastr": "^2.1.37",
+    "@types/uuid": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "clean-webpack-plugin": "^3.0.0",
