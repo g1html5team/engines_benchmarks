@@ -32,6 +32,7 @@ module.exports = {
     masks_filter: './src/examples/examples/masks/filter.ts',
     dragon: './src/examples/examples/spine/dragon.ts',
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
+    benchmarks: './src/benchmarks/benchmarks.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -209,9 +210,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'benchmarks.html',
-      title: 'PixiJS - Spineboy Pro',
-      template: './src/benchmarks/benchmark.html',
-      chunks: [''],
+      title: 'PixiJS - Benchmarks',
+      template: './src/benchmarks/benchmarks.html',
+      chunks: ['benchmarks'],
     }),
   ],
   module: {
