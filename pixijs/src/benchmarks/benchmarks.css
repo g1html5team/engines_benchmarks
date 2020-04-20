@@ -46,6 +46,11 @@
   display: inline-block;
 }
 
+.settings-container .inline-setting-33 {
+  width: 32%;
+  display: inline-block;
+}
+
 .settings-container .inline-setting.right {
   float: right;
 }
@@ -64,4 +69,20 @@
 
 .row {
   padding: 5px 0;
+}
+
+.row.centered {
+  text-align: center;
+}
+
+.separator {
+  border-color: #38404e;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.settings-container .section-title {
+  font-weight: 600;
+  text-align: center;
+  margin: 20px;
 }

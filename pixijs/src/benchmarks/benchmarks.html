@@ -3,49 +3,127 @@
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-<body>
+<body class="preload">
 <h1 class="benchmarks-title">Benchmarks</h1>
-<div class="settings-container">
-    <fieldset class="user-infos outset-fieldset">
-        <legend>User Infos</legend>
-        <div class="row">
-            <label for="user">User</label>
-            <input id="user" class="value" type="text">
-        </div>
-        <div class="row">
-            <label for="device">Device</label>
-            <select name="device" id="device" class="value">
-                <option value="desktop">Desktop</option>
-                <option value="mobile">Mobile</option>
-            </select>
-        </div>
-    </fieldset>
-    <fieldset class="server-infos outset-fieldset">
-        <legend>Server Infos</legend>
-        <div class="row">
-            <label for="ip">IP</label>
-            <input id="ip" class="value" type="text">
-        </div>
-        <div class="row">
-            <label for="port">Port</label>
-            <input id="port" class="value" type="text">
-        </div>
-    </fieldset>
-    <fieldset class="benchmark-settings outset-fieldset">
-        <legend>Benchmark Settings</legend>
-        <div class="row">
-            <div class="inline-setting">
-                <label for="duration">Duration</label>
-                <input id="duration" class="value" type="text">
+<form id="form">
+    <div class="settings-container">
+        <fieldset class="user-infos outset-fieldset">
+            <legend>User Infos</legend>
+            <div class="row">
+                <label for="user">User</label>
+                <input id="user" class="value" type="text">
             </div>
-            <div class="inline-setting right">
-                <label>Canvas</label>
-                <span class="value">
-                    <input class="small" type="text" placeholder="width"> x <input class="small" type="text" placeholder="height">
-                </span>
+            <div class="row">
+                <label for="device">Device</label>
+                <select name="device" id="device" class="value">
+                    <option value="desktop">Desktop</option>
+                    <option value="mobile">Mobile</option>
+                </select>
             </div>
-        </div>
-    </fieldset>
-</div>
+        </fieldset>
+        <fieldset class="server-infos outset-fieldset">
+            <legend>Server Infos</legend>
+            <div class="row">
+                <label for="ip">IP</label>
+                <input id="ip" class="value" type="text" value="localhost">
+            </div>
+            <div class="row">
+                <label for="port">Port</label>
+                <input id="port" class="value" type="text" value="12345">
+            </div>
+        </fieldset>
+        <fieldset class="benchmark-settings outset-fieldset">
+            <legend>Benchmark Settings</legend>
+            <div class="row">
+                <div class="inline-setting">
+                    <label for="duration">Duration</label>
+                    <input id="duration" class="value" type="number" value="2">
+                </div>
+                <div class="inline-setting right">
+                    <label>Canvas</label>
+                    <span class="value">
+                        <input id="width" class="small" type="number" placeholder="width" value="1280"> x <input id="height" class="small" type="number" placeholder="height" value="720">
+                    </span>
+                </div>
+            </div>
+            <hr class="separator">
+            <div class="section-title">Benchmarks to use</div>
+            <div class="row">
+                <button class="button tiny" id="toggle" type="button">Toggle all</button>
+                <button class="button tiny" id="check" type="button">Check all</button>
+                <button class="button tiny" id="uncheck" type="button">Uncheck all</button>
+            </div>
+            <div class="row">
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="children" name="children">
+                    <label for="children"> Children</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="labels" name="labels">
+                    <label for="labels"> Labels</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="filters" name="filters">
+                    <label for="filters"> Filters</label><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="masks" name="masks">
+                    <label for="masks"> Masks</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="blend" name="blend">
+                    <label for="blend"> Blend mode</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="gpu" name="gpu">
+                    <label for="gpu"> GPU slot</label><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="atlas" name="atlas">
+                    <label for="atlas"> Atlas</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="flipbook" name="flipbook">
+                    <label for="flipbook"> Flipbook</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="particles" name="particles">
+                    <label for="particles"> Particles</label><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="texture" name="texture">
+                    <label for="texture"> Render texture</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="shader" name="shader">
+                    <label for="shader"> Shader</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="spine" name="spine">
+                    <label for="spine"> Spine</label><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="visibility" name="visibility">
+                    <label for="visibility"> Visibility</label><br>
+                </div>
+                <div class="inline-setting-33">
+                    <input type="checkbox" id="zindex" name="zindex">
+                    <label for="zindex"> Z-index</label><br>
+                </div>
+            </div>
+            <div class="row centered">
+                <button type="submit" class="button small">Run benchmarks</button>
+            </div>
+        </fieldset>
+    </div>
+</form>
 </body>
 </html>

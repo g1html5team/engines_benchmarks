@@ -2,7 +2,6 @@ body {
   font-family: Roboto, sans-serif;
   color: white;
   background: #272d37;
-  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -30,13 +29,12 @@ body {
 }
 
 .button-container {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+  position: relative;
+  top: 25%;
   text-align: center;
 }
 
-.button-container .button {
+.button {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   min-width: 170px;
@@ -53,7 +51,20 @@ body {
   cursor: pointer;
 }
 
-.button-container .button:hover {
+.button.small {
+  min-width: initial;
+  padding: 5px 12px;
+  margin: 8px 5px;
+}
+
+.button.tiny {
+  min-width: initial;
+  padding: 3px 5px;
+  margin: 0 3px;
+  font-weight: initial;
+}
+
+.button:hover {
   background-color: white;
   color: #272d37;
   border: 3px solid #38404e;
