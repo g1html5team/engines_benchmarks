@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../../../canvas.css';
 import * as PIXI from 'pixi.js';
 import YellowStar from '../assets/yellowstar.png';
 

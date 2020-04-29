@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../../../canvas.css';
 import * as PIXI from 'pixi.js';
 import BgPlane from '../assets/bg_plane.jpg';
 import Cells from '../assets/cells.png';

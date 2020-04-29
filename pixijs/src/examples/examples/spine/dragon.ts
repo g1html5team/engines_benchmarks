@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../../../canvas.css';
 import '../utils/global_pixi';
 import 'pixi-spine';
 

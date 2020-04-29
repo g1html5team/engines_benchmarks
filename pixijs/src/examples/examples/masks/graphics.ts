@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../../../canvas.css';
 import * as PIXI from 'pixi.js';
 import BgRotate from '../assets/bg_rotate.jpg';
 import BgSceneRotate from '../assets/bg_scene_rotate.jpg';

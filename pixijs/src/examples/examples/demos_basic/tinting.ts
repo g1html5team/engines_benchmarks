@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../../../canvas.css';
 import * as PIXI from 'pixi.js';
 import EggHead from '../assets/eggHead.png';
 import { MovingSprite } from './model/moving_sprite';
