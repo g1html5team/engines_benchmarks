@@ -1,10 +1,11 @@
 import '../styles.css';
 import './benchmarks.css';
 import { v4 as uuidv4 } from 'uuid';
-import Axios, { AxiosInstance } from 'axios';
+import Axios, { AxiosInstance, AxiosResponse } from 'axios';
 import * as Toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 import { BenchmarkConfig } from './model/benchmark_info';
+import { ConfigResponse } from './model/response';
 
 class Benchmarks {
   private readonly client: AxiosInstance = Axios.create();
@@ -37,9 +38,9 @@ class Benchmarks {
       runSpine: Benchmarks.getElementValue('spine'),
       runVisibility: Benchmarks.getElementValue('visibility'),
       runZindex: Benchmarks.getElementValue('zindex'),
-      runStageXl: '',
-      runPixi: '',
-      runNg1n: '',
+      runStageXl: 'false',
+      runPixi: 'true',
+      runNg1n: 'false',
     };
 
     this.serverURL = `http://${this.config.serverIp}:${this.config.serverPort}`;
@@ -64,15 +65,69 @@ class Benchmarks {
 
   public async run(): Promise<void> {
     try {
-      const response = await this.client.post(
+      const response: AxiosResponse = await this.client.post(
         `${this.serverURL}/api/config?id=${this.runId}`,
         JSON.stringify(this.config),
         { validateStatus: () => true },
       );
 
       if (response.status === 200) {
-        // TODO (sch)
-        Toastr.info(`${response.status} ${response.statusText}`);
+        // Display result URL
+        const resultRawUrl = `http://${this.config.serverIp}:8080/result_view.html?id=${this.runId}`;
+        console.log(`Result viewer: ${resultRawUrl}`); // TODO (sch) display result url in page instead of console
+
+        // Hide form
+        document.getElementById('benchmark-form').classList.add('hidden');
+
+        // Show iframe
+        document.getElementById('iframe-container').classList.remove('hidden');
+
+        let lastResponse = response as AxiosResponse<ConfigResponse>;
+
+        const limit = 5;
+        let cnt = 0;
+        while (lastResponse.status === 200 && cnt++ < limit) {
+          const capturedWindow = window;
+          const { data } = lastResponse;
+          const subtitle = document.querySelector('.benchmarks-subtitle');
+          subtitle.classList.remove('hidden');
+          subtitle.textContent = `${data.engine.toUpperCase()} - ${data.step} - ${data.parameter}`;
+
+          // Create iframe
+          // We don't use data.baseUrl as it points to server and then would serve original benchmarks
+          let uri = `${data.path}?`;
+          Object.keys(data).forEach((dataKey: keyof ConfigResponse) => {
+            if (dataKey !== 'baseUrl' && dataKey !== 'path') {
+              uri += `${dataKey}=${data[dataKey]}&`;
+            }
+          });
+          uri = encodeURI(uri.substring(0, uri.length - 1));
+
+          const iframeContainer = document.getElementById('iframe-container');
+          const iframes = iframeContainer.querySelectorAll('iframe');
+          for (let i = 0; i < iframes.length; i++) {
+            iframes[i].parentNode.removeChild(iframes[i]);
+          }
+
+          const iframe = document.createElement('iframe');
+          iframe.width = data.cw.toString();
+          iframe.height = data.ch.toString();
+          iframeContainer.appendChild(iframe);
+
+          iframe.src = uri;
+
+          const resultPromise = new Promise<string>((resolve) => {
+            capturedWindow.addEventListener('message', (event) => {
+              resolve(event.data);
+            });
+          });
+
+          const result = await resultPromise;
+          lastResponse = await this.client.post(`${this.serverURL}/api/next?id=${this.runId}`, {
+            result,
+            response: lastResponse.data,
+          });
+        }
       } else {
         Toastr.warning(response.data, `Error ${response.status} - ${response.statusText}`);
       }
@@ -105,7 +160,7 @@ function initForm(): void {
     });
   };
 
-  document.getElementById('form').onsubmit = (event): void => {
+  document.getElementById('benchmark-form').onsubmit = (event): void => {
     const benchmarks = new Benchmarks();
     benchmarks
       .run()

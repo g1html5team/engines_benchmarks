@@ -1,7 +1,11 @@
 .benchmarks-title {
   text-align: center;
   font-size: 36px;
-  padding: 20px;
+  padding-top: 20px;
+}
+
+.benchmarks-subtitle {
+  text-align: center;
 }
 
 .settings-container {
@@ -85,4 +89,12 @@
   font-weight: 600;
   text-align: center;
   margin: 20px;
+}
+
+.iframe-container {
+  text-align: center;
+}
+
+.iframe-container iframe {
+  border: solid 1px gray;
 }
