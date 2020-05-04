@@ -33,6 +33,7 @@ module.exports = {
     dragon: './src/examples/examples/spine/dragon.ts',
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
     benchmarks: './src/benchmarks/benchmarks.ts',
+    add_remove_child: './src/benchmarks/run/add_remove_child.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -213,6 +214,11 @@ module.exports = {
       title: 'PixiJS - Benchmarks',
       template: './src/benchmarks/benchmarks.html',
       chunks: ['benchmarks'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/add_remove_child.html',
+      title: 'Benchmark - Add remove child',
+      chunks: ['add_remove_child'],
     }),
   ],
   module: {

@@ -22,5 +22,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'error',
     'no-param-reassign': ['error', { props: false }],
+    'no-await-in-loop': 'off',
   },
 };
