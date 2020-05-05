@@ -28,6 +28,7 @@ export abstract class Benchmark {
 
   public async run(): Promise<BenchmarkResult> {
     this.app.ticker.add((delta) => {
+      this.eachFrameCallback();
       this.frameDurations.push(delta);
     });
 
@@ -40,6 +41,8 @@ export abstract class Benchmark {
       }, this.benchmarkDuration * 1000);
     });
   }
+
+  protected abstract eachFrameCallback(): void;
 
   private processResult(): BenchmarkResult {
     const frameDurationsSum = this.frameDurations.reduce((previousValue, currentValue) => previousValue + currentValue);

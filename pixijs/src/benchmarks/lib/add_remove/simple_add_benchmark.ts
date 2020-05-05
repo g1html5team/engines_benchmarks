@@ -1,6 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { Benchmark } from './benchmark';
-import { BenchmarkResult } from '../model/benchmark_result';
+import { Benchmark } from '../benchmark';
 
 export class SimpleAddBenchmark extends Benchmark {
   private bunnies: PIXI.Sprite[] = [];
@@ -21,15 +20,11 @@ export class SimpleAddBenchmark extends Benchmark {
     this.app.stage.addChild(this.container);
   }
 
-  public async run(): Promise<BenchmarkResult> {
-    this.app.ticker.add(() => {
-      this.bunnies.forEach((bunny) => {
-        this.container.addChild(bunny);
-        bunny.x = Math.random() * this.app.renderer.screen.width;
-        bunny.y = Math.random() * this.app.renderer.screen.height;
-      });
+  protected eachFrameCallback(): void {
+    this.bunnies.forEach((bunny) => {
+      this.container.addChild(bunny);
+      bunny.x = Math.random() * this.app.renderer.screen.width;
+      bunny.y = Math.random() * this.app.renderer.screen.height;
     });
-
-    return super.run();
   }
 }

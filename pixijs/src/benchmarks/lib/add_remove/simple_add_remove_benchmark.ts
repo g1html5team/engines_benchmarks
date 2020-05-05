@@ -1,6 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { Benchmark } from './benchmark';
-import { BenchmarkResult } from '../model/benchmark_result';
+import { Benchmark } from '../benchmark';
 
 export class SimpleAddRemoveBenchmark extends Benchmark {
   private bunnies: PIXI.Sprite[] = [];
@@ -26,26 +25,22 @@ export class SimpleAddRemoveBenchmark extends Benchmark {
     this.app.stage.addChild(this.container);
   }
 
-  public async run(): Promise<BenchmarkResult> {
-    this.app.ticker.add(() => {
-      if (this.removedBunnies.length === 0 && this.container.children.length > 0) {
-        this.bunnies.forEach((bunny) => {
-          this.container.removeChild(bunny);
-          this.removedBunnies.push(bunny);
-        });
-      } else if (this.drawNow) {
-        this.drawNow = false;
-      } else {
-        this.removedBunnies.forEach((bunny) => {
-          this.container.addChild(bunny);
-          this.setRandomPosition(bunny);
-        });
-        this.drawNow = true;
-        this.removedBunnies = [];
-      }
-    });
-
-    return super.run();
+  protected eachFrameCallback(): void {
+    if (this.removedBunnies.length === 0 && this.container.children.length > 0) {
+      this.bunnies.forEach((bunny) => {
+        this.container.removeChild(bunny);
+        this.removedBunnies.push(bunny);
+      });
+    } else if (this.drawNow) {
+      this.drawNow = false;
+    } else {
+      this.removedBunnies.forEach((bunny) => {
+        this.container.addChild(bunny);
+        this.setRandomPosition(bunny);
+      });
+      this.drawNow = true;
+      this.removedBunnies = [];
+    }
   }
 
   private setRandomPosition(sprite: PIXI.Sprite): void {

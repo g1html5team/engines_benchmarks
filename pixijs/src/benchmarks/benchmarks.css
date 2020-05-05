@@ -71,6 +71,11 @@
   width: 25%;
 }
 
+.settings-container label.disabled {
+  color: gray;
+  opacity: 0.6;
+}
+
 .row {
   padding: 5px 0;
 }
