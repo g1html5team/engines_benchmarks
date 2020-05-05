@@ -118,15 +118,18 @@ class Benchmarks {
 
           const resultPromise = new Promise<string>((resolve) => {
             capturedWindow.addEventListener('message', (event) => {
-              resolve(event.data);
+              resolve(JSON.parse(event.data));
             });
           });
 
           const result = await resultPromise;
-          lastResponse = await this.client.post(`${this.serverURL}/api/next?id=${this.runId}`, {
-            result,
-            response: lastResponse.data,
-          });
+          lastResponse = await this.client.post(
+            `${this.serverURL}/api/next?id=${this.runId}`,
+            JSON.stringify({
+              result,
+              reponse: lastResponse.data,
+            }),
+          );
         }
       } else {
         Toastr.warning(response.data, `Error ${response.status} - ${response.statusText}`);
