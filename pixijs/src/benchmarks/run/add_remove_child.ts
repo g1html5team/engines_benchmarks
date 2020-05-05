@@ -2,6 +2,8 @@ import '../../canvas.css';
 import * as Toastr from 'toastr';
 import { SimpleAddBenchmark } from '../lib/simple_add_benchmark';
 import { Benchmark } from '../lib/benchmark';
+import { SimpleAddRemoveBenchmark } from '../lib/simple_add_remove_benchmark';
+import { AddRemoveContainerBenchmark } from '../lib/add_remove_container_benchmark';
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -27,11 +29,21 @@ switch (benchmarkId) {
   }
   case 2: {
     // Simple add remove benchmark
-    // TODO (sch)
+    benchmark = new SimpleAddRemoveBenchmark(width, height, numberOfObjects);
+    benchmark.init().then(() => {
+      benchmark.run().then((result) => {
+        window.parent.postMessage(result.toString(), parentWindowTarget);
+      });
+    });
     break;
   }
   case 3: {
-    // TODO (sch) run add remove container benchmark
+    benchmark = new AddRemoveContainerBenchmark(width, height, numberOfObjects);
+    benchmark.init().then(() => {
+      benchmark.run().then((result) => {
+        window.parent.postMessage(result.toString(), parentWindowTarget);
+      });
+    });
     break;
   }
   default: {
