@@ -19,9 +19,9 @@ class Example {
 
     var resourceManager = ResourceManager();
     var format = TextureAtlasFormat.LIBGDX;
-    resourceManager.addTextFile("coin", "../images/coin.json");
-    resourceManager.addTextureAtlas("coin", "../images/coin.atlas", format);
-    resourceManager.addBitmapData('logo', "../images/logo.png");
+    resourceManager.addTextFile("coin", "images/coin.json");
+    resourceManager.addTextureAtlas("coin", "images/coin.atlas", format);
+    resourceManager.addBitmapData('logo', "images/logo.png");
     await resourceManager.load();
 
     // load image
