@@ -3,3 +3,4 @@ _*
 .tools/
 .dart_tool/
 .packages
+build/
