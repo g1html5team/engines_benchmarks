@@ -35,8 +35,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "build": "rm -r -f dist && webpack",
+    "start": "rm -r -f dist && webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

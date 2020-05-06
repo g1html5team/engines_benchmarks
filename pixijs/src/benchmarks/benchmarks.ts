@@ -114,7 +114,7 @@ class Benchmarks {
           iframe.height = data.ch.toString();
           iframeContainer.appendChild(iframe);
 
-          iframe.src = uri;
+          iframe.src = uri.substring(1);
 
           const resultPromise = new Promise<string>((resolve) => {
             capturedWindow.addEventListener('message', (event) => {
@@ -127,7 +127,7 @@ class Benchmarks {
             `${this.serverURL}/api/next?id=${this.runId}`,
             JSON.stringify({
               result,
-              reponse: lastResponse.data,
+              response: lastResponse.data,
             }),
           );
         }

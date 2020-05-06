@@ -16,4 +16,4 @@ function onAssetsLoaded(): void {
   app.stage.addChild(bitmapFontText);
 }
 
-app.loader.add('desyrel', 'examples/examples/assets/bitmap_font/desyrel.xml').load(onAssetsLoaded);
+app.loader.add('desyrel', 'examples/assets/bitmap_font/desyrel.xml').load(onAssetsLoaded);

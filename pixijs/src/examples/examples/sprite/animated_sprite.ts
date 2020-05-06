@@ -36,4 +36,4 @@ function onAssetsLoaded(): void {
   });
 }
 
-app.loader.add('examples/examples/assets/spritesheet/fighter.json').load(onAssetsLoaded);
+app.loader.add('examples/assets/spritesheet/fighter.json').load(onAssetsLoaded);
