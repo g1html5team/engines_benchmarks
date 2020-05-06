@@ -1,0 +1,7 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - web/**
+      # Note that it is important to include these in the default target.
+      - pubspec.*

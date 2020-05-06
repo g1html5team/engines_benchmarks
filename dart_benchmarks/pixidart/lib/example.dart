@@ -5,12 +5,14 @@ import 'package:pixi_dart_benchmark/spine/pixi_spine.dart';
 import 'package:pixi_dart_benchmark/spine/spine_facade.dart';
 
 class PixiDartExample {
-  Application app = Application();
+  Application app;
   Sprite sunshine = Sprite.fromImage('assets/sunshine.png');
   Loader loader = Loader();
 
   PixiDartExample() {
 
+    Options option = new Options(forceCanvas: true);
+    app = new Application(option);
     document.body.append(app.view);
 
 
@@ -26,6 +28,8 @@ class PixiDartExample {
 
     //Spine example
     loader.add('spineBoy', 'assets/spine/spineboy.json');
+
+    loader.add('atlas', 'assets/images/atlas.json');
 
     loader.load(allowInterop((a, b) {
       Spine spineBoyPro = createSpine(loader, 'spineBoy');

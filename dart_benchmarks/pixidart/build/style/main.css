@@ -1,0 +1,139 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222a53;
+}
+
+#bunny {
+    display: none;
+}
+
+#bm-container {
+    color: white;
+    width: 950px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.row-1 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#input-run-duration {
+    width: 35px;
+}
+
+h3 {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    margin: 20px;
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+legend {
+    padding: 0 5px;
+}
+
+.row-1 > fieldset > div {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+fieldset > div:last-child {
+    margin-bottom: 0;
+}
+
+fieldset div div {
+    margin-bottom: 5px;
+}
+
+fieldset button {
+    margin-bottom: 10px;
+}
+
+fieldset div div input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+div > label {
+    margin-right: 10px;
+}
+
+input, select, button {
+    padding: 5px;
+}
+
+fieldset > div > input, select {
+    flex: 1;
+}
+
+#canvas-container {
+    display: none;
+    text-align: center;
+}
+
+#bm-state {
+    text-align: center;
+    color: white;
+}
+
+#canvas-container.active {
+    display: block;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+h1 a {
+    color: #b31d2c;
+}
+
+#start {
+    width: 50%;
+    font-size: 100%;
+}
+
+#popup {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .row-1 {
+        flex-direction: column;
+    }
+
+    .row-1 > div {
+        display: flex;
+        width: 65%;
+    }
+
+    .row-1 > div > input {
+        flex: 1;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        background-color: #222a53;
+    }
+}

@@ -1,0 +1,223 @@
+{
+  "frames": {
+    "slota.background": {
+      "sourceSize": {
+        "w": 1280,
+        "h": 720
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      },
+      "bitmapDataTargetSize": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "slota.complete": {
+      "sourceSize": {
+        "w": 327,
+        "h": 373
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 27,
+        "w": 327,
+        "h": 373
+      },
+      "frame": {
+        "x": 0,
+        "y": 1286,
+        "w": 317,
+        "h": 319
+      },
+      "bitmapDataTargetSize": {
+        "w": 327,
+        "h": 373
+      }
+    },
+    "slota.caracter": {
+      "sourceSize": {
+        "w": 659,
+        "h": 835
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 659,
+        "h": 835
+      },
+      "frame": {
+        "x": 726,
+        "y": 0,
+        "w": 659,
+        "h": 835
+      },
+      "bitmapDataTargetSize": {
+        "w": 659,
+        "h": 835
+      }
+    },
+    "slota.ending": {
+      "sourceSize": {
+        "w": 706,
+        "h": 930
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 706,
+        "h": 930
+      },
+      "frame": {
+        "x": 726,
+        "y": 664,
+        "w": 706,
+        "h": 930
+      },
+      "bitmapDataTargetSize": {
+        "w": 706,
+        "h": 930
+      }
+    },
+    "slota.symbolB": {
+      "sourceSize": {
+        "w": 151,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 25,
+        "w": 151,
+        "h": 176
+      },
+      "frame": {
+        "x": 1436,
+        "y": 664,
+        "w": 151,
+        "h": 131
+      },
+      "bitmapDataTargetSize": {
+        "w": 151,
+        "h": 176
+      }
+    },
+    "slota.symbolD": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 20,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1436,
+        "y": 800,
+        "w": 93,
+        "h": 142
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "slota.symbolE": {
+      "sourceSize": {
+        "w": 127,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 23,
+        "w": 127,
+        "h": 176
+      },
+      "frame": {
+        "x": 1436,
+        "y": 898,
+        "w": 126,
+        "h": 132
+      },
+      "bitmapDataTargetSize": {
+        "w": 127,
+        "h": 176
+      }
+    },
+    "slota.symbolA": {
+      "sourceSize": {
+        "w": 111,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 23,
+        "w": 111,
+        "h": 176
+      },
+      "frame": {
+        "x": 1436,
+        "y": 1030,
+        "w": 111,
+        "h": 132
+      },
+      "bitmapDataTargetSize": {
+        "w": 111,
+        "h": 176
+      }
+    },
+    "slota.symbolC": {
+      "sourceSize": {
+        "w": 89,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 25,
+        "w": 89,
+        "h": 176
+      },
+      "frame": {
+        "x": 1436,
+        "y": 1146,
+        "w": 82,
+        "h": 132
+      },
+      "bitmapDataTargetSize": {
+        "w": 89,
+        "h": 176
+      }
+    }
+  },
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "slot_pack1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1587,
+      "h": 1603
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:51ede84c7a85e4d6aeb31a6020a20858:3923663e59fb40b578d66a492a2cda2d:9995f8b4db1ac3cb75651b1542df8ee2$"
+  }
+}

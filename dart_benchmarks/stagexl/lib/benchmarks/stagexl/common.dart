@@ -1,0 +1,52 @@
+import 'dart:html';
+import 'package:stagexl/stagexl.dart';
+import 'package:stagexl_benchmark/benchmarks/common.dart';
+import 'package:stagexl_benchmark/helpers/stagexl_objects.dart';
+import 'package:stagexl_benchmark/interfaces/stagexl.dart';
+
+class StageXlBenchmark implements GraphicEngineBenchmark {
+  final int canvasWidth;
+  final int canvasHeight;
+  Element container;
+  CanvasElement canvas;
+  StagexlInterface interface = new StagexlInterface();
+  BenchmarkManager manager;
+  Stage app;
+  FixedContainer layout;
+
+  StageXlBenchmark(this.container, this.canvasWidth, this.canvasHeight) {
+    initialize();
+    manager = new BenchmarkManager(
+        interface, canvasWidth, canvasHeight, frameRendering, layout);
+
+  }
+
+  initialize() {
+
+    print("Start init");
+    canvas = new CanvasElement(width: canvasWidth, height: canvasHeight);
+
+    app = new Stage(canvas);
+    layout = new FixedContainer(canvasWidth, canvasHeight);
+    layout.x = -canvasWidth / 2;
+    layout.y = -canvasHeight / 2;
+    app.addChild(layout);
+    container.append(canvas);
+  }
+
+  release() {
+    Element h = container.children.first;
+    container.children.clear();
+    container.append(h);
+    app.removeChildren();
+//    app.release();
+    app.removeFromParent();
+    app = null;
+    canvas = null;
+    layout = null;
+  }
+
+  frameRendering(num v) {
+    app.stage.materialize(v, v);
+  }
+}
