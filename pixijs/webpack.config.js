@@ -256,6 +256,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     benchmarks: './src/benchmarks/benchmarks.ts',
     'run/add_remove_child': './src/benchmarks/run/add_remove_child.ts',
     'run/filters': './src/benchmarks/run/filters.ts',
+    'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -291,6 +292,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/filters.html',
       title: 'Benchmark - Filters',
       chunks: ['run/filters'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/blend_mode.html',
+      title: 'Benchmark - Blend mode',
+      chunks: ['run/blend_mode'],
     }),
   ],
   output: {

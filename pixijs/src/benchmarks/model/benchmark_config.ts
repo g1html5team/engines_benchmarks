@@ -12,7 +12,7 @@ export interface BenchmarkConfig {
   labels: string;
   filters: string;
   masks: string;
-  blendMode: string;
+  blend: string;
   gpuSlot: string;
   atlas: string;
   flipbook: string;

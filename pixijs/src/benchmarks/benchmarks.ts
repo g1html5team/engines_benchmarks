@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Axios, { AxiosInstance, AxiosResponse } from 'axios';
 import * as Toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
-import { BenchmarkConfig } from './model/benchmark_info';
+import { BenchmarkConfig } from './model/benchmark_config';
 import { ConfigResponse } from './model/response';
 
 class Benchmarks {
@@ -28,7 +28,7 @@ class Benchmarks {
       labels: Benchmarks.getElementValue('labels'),
       filters: Benchmarks.getElementValue('filters'),
       masks: Benchmarks.getElementValue('masks'),
-      blendMode: Benchmarks.getElementValue('blend'),
+      blend: Benchmarks.getElementValue('blend'),
       gpuSlot: Benchmarks.getElementValue('gpu'),
       atlas: Benchmarks.getElementValue('atlas'),
       flipbook: Benchmarks.getElementValue('flipbook'),
