@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <title>Benchmark</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css" id="sheet">
+    <script src="packages/pixi/js/pixi.min.js"></script>
+
+</head>
+<body style="display: none;">
+<img src="run/bunny.png" alt="bg" id="bunny" style="display: none;">
+<div id="bm-container">
+    <h1>Benchmark</h1>
+    <div class="row-1">
+        <fieldset>
+            <legend>User Infos</legend>
+            <div>
+                <label for="input-user">User</label><input type="text" id="input-user" name="input-user" placeholder="Enter user here ...">
+            </div>
+            <div>
+                <label for="input-user-device">Device</label>
+                <select name="input-user-device" id="input-user-device">
+                    <option value="desktop" selected>Desktop</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Server Infos</legend>
+            <div>
+                <label for="input-ip">IP</label><input type="text" id="input-ip" name="input-ip" value="localhost">
+            </div>
+            <div>
+                <label for="input-port">Port</label><input type="text" id="input-port" name="input-port" value="12345">
+            </div>
+        </fieldset>
+    </div>
+
+    <fieldset>
+        <legend>Benchmark Settings</legend>
+        <div class="row-1">
+            <div>
+                <label for="input-run-duration">Duration(sec)</label><input type="number" min="2" step="1" id="input-run-duration" name="input-run-duration" value="2">
+            </div>
+            <div>
+                <label for="input-canvas-width">Canvas Width</label><input type="number" min="50" max="1920" step="1" id="input-canvas-width" name="input-canvas-width" value="1280">
+            </div>
+            <div>
+                <label for="input-canvas-height">Canvas Height</label><input type="number" min="50" max="1080" step="1" id="input-canvas-height" name="input-canvas-height" value="720">
+            </div>
+        </div>
+        <div>
+            <h3>Graphics Engine to benchmark</h3>
+<!--            <div>-->
+<!--                <input type="checkbox" checked id="input-use-ng1n" name="input-use-ng1n"><label-->
+<!--                    for="input-use-ng1n">NG1N</label>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <input type="checkbox" checked id="input-use-stagexl" name="input-use-stagexl"><label-->
+<!--                    for="input-use-stagexl">STAGE XL</label>-->
+<!--            </div>-->
+            <div>
+                <input type="checkbox" checked id="input-use-pixi" name="input-use-pixi"><label
+                    for="input-use-pixi">PIXI</label>
+            </div>
+        </div>
+        <div>
+            <h3>Benchmarks to use</h3>
+            <button id="run-check">Check/Uncheck all</button>
+            <div>
+                <input type="checkbox" checked id="input-use-children" name="input-use-children"><label
+                    for="input-use-children">Children</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-label" name="input-use-label"><label
+                    for="input-use-label">Labels</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-filter" name="input-use-filter"><label
+                    for="input-use-filter">Filters</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-mask" name="input-use-mask"><label
+                    for="input-use-mask">Masks</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-blend" name="input-use-blend"><label
+                    for="input-use-mask">Blend Mode</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-gpu" name="input-use-gpu"><label
+                    for="input-use-mask">Gpu Slot</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-atlas" name="input-use-atlas"><label
+                    for="input-use-mask">Atlas</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-flipbook" name="input-use-flipbook"><label
+                    for="input-use-mask">Flipbook</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-particles" name="input-use-particles"><label
+                    for="input-use-mask">Particles</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-render-texture" name="input-use-render-texture"><label
+                    for="input-use-mask">Render Texture</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-shader" name="input-use-shader"><label
+                    for="input-use-mask">Shader</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-spine" name="input-use-spine"><label
+                    for="input-use-mask">Spine</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-visibility" name="input-use-visibility"><label
+                    for="input-use-mask">Visibility</label>
+            </div>
+            <div>
+                <input type="checkbox" checked id="input-use-zindex" name="input-use-zindex"><label
+                    for="input-use-mask">Z-Index</label>
+            </div>
+        </div>
+    </fieldset>
+    <button id="start">Run Benchmark</button>
+</div>
+<div id="canvas-container">
+    <h1 id="bm-state"></h1>
+</div>
+<script defer src="main.dart.js"></script>
+<!--<script src="packages/browser/dart.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,99 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+#container , #results-container {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#results-container table {
+    margin: 20px auto;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#results-container .table-head-engine {
+    background-color: rgba(128, 128, 128, 0.5);
+    font-weight: bold;
+}
+
+#results-container table > tr > td {
+    min-width: 150px;
+    vertical-align: top;
+}
+
+#results-container table, #results-container tr, #results-container td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#results-container td {
+    padding: 10px;
+}
+#results-container td.table-cell-plural {
+    padding: 0;
+}
+
+#results-container td.table-cell-plural tr {
+    border: 0;
+    width: 100%;
+    display: table;
+    border-bottom: 1px solid black;
+}
+
+#results-container td.table-cell-plural tr:last-child {
+    border: 0;
+}
+
+#results-container td.table-cell-plural td {
+    border: 0;
+}
+
+#results-container td.table-cell-plural:nth-child(2) td{
+    border: 0;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+a, button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    color: #b31d2c;
+    border: 3px solid #b31d2c;
+    font-size: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+label {
+    margin-right: 10px;
+}
+
+input[type='file'] {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+a:hover, button:hover {
+    background-color: #b31d2c;
+    color: #222a53;
+}

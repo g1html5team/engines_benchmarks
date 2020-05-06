@@ -1,0 +1,1166 @@
+{
+  "frames": {
+    "atlas50a.img39a": {
+      "sourceSize": {
+        "w": 306,
+        "h": 294
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 306,
+        "h": 294
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 306,
+        "h": 294
+      },
+      "bitmapDataTargetSize": {
+        "w": 306,
+        "h": 294
+      }
+    },
+    "atlas50a.img25a": {
+      "sourceSize": {
+        "w": 303,
+        "h": 256
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 303,
+        "h": 256
+      },
+      "frame": {
+        "x": 0,
+        "y": 312,
+        "w": 303,
+        "h": 256
+      },
+      "bitmapDataTargetSize": {
+        "w": 303,
+        "h": 256
+      }
+    },
+    "atlas50a.img42a": {
+      "sourceSize": {
+        "w": 303,
+        "h": 256
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 303,
+        "h": 256
+      },
+      "frame": {
+        "x": 0,
+        "y": 620,
+        "w": 303,
+        "h": 256
+      },
+      "bitmapDataTargetSize": {
+        "w": 303,
+        "h": 256
+      }
+    },
+    "atlas50a.img48a": {
+      "sourceSize": {
+        "w": 303,
+        "h": 256
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 303,
+        "h": 256
+      },
+      "frame": {
+        "x": 0,
+        "y": 928,
+        "w": 303,
+        "h": 256
+      },
+      "bitmapDataTargetSize": {
+        "w": 303,
+        "h": 256
+      }
+    },
+    "atlas50a.img24a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 0,
+        "y": 1236,
+        "w": 260,
+        "h": 260
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img33a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 262,
+        "y": 312,
+        "w": 260,
+        "h": 260
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img34a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 300,
+        "y": 0,
+        "w": 260,
+        "h": 260
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img49a": {
+      "sourceSize": {
+        "w": 20,
+        "h": 18
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 20,
+        "h": 18
+      },
+      "frame": {
+        "x": 300,
+        "y": 266,
+        "w": 20,
+        "h": 18
+      },
+      "bitmapDataTargetSize": {
+        "w": 20,
+        "h": 18
+      }
+    },
+    "atlas50a.img32a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 262,
+        "y": 576,
+        "w": 260,
+        "h": 200
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img27a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 40,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 262,
+        "y": 842,
+        "w": 260,
+        "h": 197
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img13a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 56,
+        "y": 54,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 262,
+        "y": 1106,
+        "w": 116,
+        "h": 120
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img31a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 266,
+        "y": 1232,
+        "w": 260,
+        "h": 191
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img10a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 24,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 382,
+        "y": 1106,
+        "w": 119,
+        "h": 131
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img28a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 40,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 464,
+        "y": 842,
+        "w": 260,
+        "h": 181
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img36a": {
+      "sourceSize": {
+        "w": 303,
+        "h": 256
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 35,
+        "y": 1,
+        "w": 303,
+        "h": 256
+      },
+      "frame": {
+        "x": 466,
+        "y": 576,
+        "w": 236,
+        "h": 255
+      },
+      "bitmapDataTargetSize": {
+        "w": 303,
+        "h": 256
+      }
+    },
+    "atlas50a.img17a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 5,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 462,
+        "y": 1230,
+        "w": 230,
+        "h": 249
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img09a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 57,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 518,
+        "y": 1106,
+        "w": 150,
+        "h": 118
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img47a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 24,
+        "y": 9,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 650,
+        "y": 836,
+        "w": 211,
+        "h": 242
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img16a": {
+      "sourceSize": {
+        "w": 153,
+        "h": 179
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 1,
+        "w": 153,
+        "h": 179
+      },
+      "frame": {
+        "x": 674,
+        "y": 1084,
+        "w": 139,
+        "h": 168
+      },
+      "bitmapDataTargetSize": {
+        "w": 153,
+        "h": 179
+      }
+    },
+    "atlas50a.img29a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 696,
+        "y": 1228,
+        "w": 238,
+        "h": 181
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img14a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 27,
+        "y": 19,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 846,
+        "y": 1084,
+        "w": 151,
+        "h": 138
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img07a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 19,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 882,
+        "y": 1226,
+        "w": 235,
+        "h": 222
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img30a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 526,
+        "y": 266,
+        "w": 230,
+        "h": 184
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img03a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 23,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 564,
+        "y": 0,
+        "w": 218,
+        "h": 226
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img00a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 16,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 708,
+        "y": 500,
+        "w": 203,
+        "h": 225
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img40a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 67,
+        "y": 36,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 708,
+        "y": 730,
+        "w": 95,
+        "h": 159
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img01a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 49,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 866,
+        "y": 830,
+        "w": 223,
+        "h": 162
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img15a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 33,
+        "y": 6,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1002,
+        "y": 1058,
+        "w": 136,
+        "h": 163
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img04a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 716,
+        "y": 232,
+        "w": 218,
+        "h": 200
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img02a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 38,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 788,
+        "y": 0,
+        "w": 217,
+        "h": 195
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img19a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1110,
+        "y": 1226,
+        "w": 201,
+        "h": 176
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img45a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 19,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1290,
+        "y": 0,
+        "w": 200,
+        "h": 197
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img05a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 23,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1144,
+        "y": 0,
+        "w": 114,
+        "h": 132
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img08a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 40,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 988,
+        "y": 0,
+        "w": 152,
+        "h": 150
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img06a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 26,
+        "y": 25,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1144,
+        "y": 120,
+        "w": 152,
+        "h": 131
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img12a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 40,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 988,
+        "y": 158,
+        "w": 152,
+        "h": 150
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img38a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 20,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1290,
+        "y": 202,
+        "w": 200,
+        "h": 196
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img22a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 51,
+        "y": 36,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1144,
+        "y": 276,
+        "w": 127,
+        "h": 164
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img11a": {
+      "sourceSize": {
+        "w": 260,
+        "h": 260
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 30,
+        "y": 33,
+        "w": 260,
+        "h": 260
+      },
+      "frame": {
+        "x": 920,
+        "y": 314,
+        "w": 195,
+        "h": 194
+      },
+      "bitmapDataTargetSize": {
+        "w": 260,
+        "h": 260
+      }
+    },
+    "atlas50a.img26a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1290,
+        "y": 404,
+        "w": 195,
+        "h": 176
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img35a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 0,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1120,
+        "y": 446,
+        "w": 162,
+        "h": 170
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img20a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 29,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 916,
+        "y": 514,
+        "w": 194,
+        "h": 179
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img18a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1290,
+        "y": 584,
+        "w": 194,
+        "h": 176
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img46a": {
+      "sourceSize": {
+        "w": 171,
+        "h": 169
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 169
+      },
+      "frame": {
+        "x": 1114,
+        "y": 620,
+        "w": 171,
+        "h": 169
+      },
+      "bitmapDataTargetSize": {
+        "w": 171,
+        "h": 169
+      }
+    },
+    "atlas50a.img37a": {
+      "sourceSize": {
+        "w": 203,
+        "h": 176
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 203,
+        "h": 176
+      },
+      "frame": {
+        "x": 1290,
+        "y": 766,
+        "w": 194,
+        "h": 170
+      },
+      "bitmapDataTargetSize": {
+        "w": 203,
+        "h": 176
+      }
+    },
+    "atlas50a.img41a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 31,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1032,
+        "y": 794,
+        "w": 173,
+        "h": 170
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img43a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 31,
+        "y": 32,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1144,
+        "y": 970,
+        "w": 169,
+        "h": 168
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img21a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 31,
+        "y": 31,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1316,
+        "y": 940,
+        "w": 167,
+        "h": 169
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img23a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": false,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 40,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1316,
+        "y": 1112,
+        "w": 152,
+        "h": 150
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    },
+    "atlas50a.img44a": {
+      "sourceSize": {
+        "w": 231,
+        "h": 232
+      },
+      "rotated": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 40,
+        "w": 231,
+        "h": 232
+      },
+      "frame": {
+        "x": 1290,
+        "y": 1268,
+        "w": 152,
+        "h": 150
+      },
+      "bitmapDataTargetSize": {
+        "w": 231,
+        "h": 232
+      }
+    }
+  },
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "atlas50a.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1490,
+      "h": 1496
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:51ede84c7a85e4d6aeb31a6020a20858:3923663e59fb40b578d66a492a2cda2d:9995f8b4db1ac3cb75651b1542df8ee2$"
+  }
+}
