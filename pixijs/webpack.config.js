@@ -254,8 +254,8 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
   name: 'benchmarks',
   entry: {
     benchmarks: './src/benchmarks/benchmarks.ts',
-    add_remove_child: './src/benchmarks/run/add_remove_child.ts',
-    filters: './src/benchmarks/run/filters.ts',
+    'run/add_remove_child': './src/benchmarks/run/add_remove_child.ts',
+    'run/filters': './src/benchmarks/run/filters.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -285,12 +285,12 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     new HtmlWebpackPlugin({
       filename: 'run/add_remove_child.html',
       title: 'Benchmark - Add remove child',
-      chunks: ['add_remove_child'],
+      chunks: ['run/add_remove_child'],
     }),
     new HtmlWebpackPlugin({
       filename: 'run/filters.html',
       title: 'Benchmark - Filters',
-      chunks: ['filters'],
+      chunks: ['run/filters'],
     }),
   ],
   output: {
