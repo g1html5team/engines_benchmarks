@@ -23,7 +23,6 @@ class StageXlBenchmark implements GraphicEngineBenchmark {
 
   initialize() {
 
-    print("Start init");
     canvas = new CanvasElement(width: canvasWidth, height: canvasHeight);
 
     app = new Stage(canvas);
@@ -31,7 +30,6 @@ class StageXlBenchmark implements GraphicEngineBenchmark {
     layout.x = -canvasWidth / 2;
     layout.y = -canvasHeight / 2;
     app.addChild(layout);
-    container.append(canvas);
   }
 
   release() {
