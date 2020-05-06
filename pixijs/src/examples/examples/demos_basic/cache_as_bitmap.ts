@@ -53,7 +53,7 @@ function onClick(): void {
 app.stop();
 
 // Load resources
-app.loader.add('spritesheet', 'examples/examples/assets/spritesheet/monsters.json').load(onAssetsLoaded);
+app.loader.add('spritesheet', 'examples/assets/spritesheet/monsters.json').load(onAssetsLoaded);
 
 // Make the stage interactive
 app.stage.interactive = true;

@@ -71,4 +71,4 @@ function onAssetsLoaded(): void {
   bottom.addListener('pointerdown', () => slot.spin());
 }
 
-app.loader.add('spritesheet', 'examples/examples/assets/spritesheet/monsters.json').load(onAssetsLoaded);
+app.loader.add('spritesheet', 'examples/assets/spritesheet/monsters.json').load(onAssetsLoaded);

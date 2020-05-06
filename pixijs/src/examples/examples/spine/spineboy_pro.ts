@@ -37,6 +37,6 @@ function onAssetsLoaded(loader: PIXI.Loader, res: Partial<Record<string, PIXI.Lo
 }
 
 // load spine data
-app.loader.add('spineboypro', 'examples/examples/assets/spine/spineboy-pro.json').load(onAssetsLoaded);
+app.loader.add('spineboypro', 'examples/assets/spine/spineboy-pro.json').load(onAssetsLoaded);
 
 app.stage.interactive = true;

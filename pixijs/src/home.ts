@@ -5,9 +5,9 @@ window.onload = (): void => {
 };
 
 document.getElementById('examples').onclick = (): void => {
-  window.location.href = 'examples.html';
+  window.location.href = 'examples/index.html';
 };
 
 document.getElementById('benchmarks').onclick = (): void => {
-  window.location.href = 'benchmarks.html';
+  window.location.href = 'benchmarks/index.html';
 };

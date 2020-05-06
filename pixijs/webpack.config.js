@@ -1,12 +1,56 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+const commonConfig = {
   mode: 'development',
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+};
+
+const homeConfig = Object.assign({}, commonConfig, {
+  name: 'home',
   entry: {
     home: './src/home.ts',
+  },
+  devServer: {
+    contentBase: './dist',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'TypeScript & PixiJS',
+      template: './src/home.html',
+      chunks: ['home'],
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+});
+
+const examplesConfig = Object.assign({}, commonConfig, {
+  name: 'examples',
+  entry: {
     examples: './src/examples/examples.ts',
     container: './src/examples/examples/demos_basic/container.ts',
     transparent: './src/examples/examples/demos_basic/transparent_background.ts',
@@ -32,60 +76,49 @@ module.exports = {
     masks_filter: './src/examples/examples/masks/filter.ts',
     dragon: './src/examples/examples/spine/dragon.ts',
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
-    benchmarks: './src/benchmarks/benchmarks.ts',
-    add_remove_child: './src/benchmarks/run/add_remove_child.ts',
-    filters: './src/benchmarks/run/filters.ts',
   },
-  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new CopyPlugin([
       {
-        from: 'src/**/*.json',
+        from: 'src/examples/**/*.json',
         to: './',
         transformPath(targetPath) {
-          return targetPath.substring(4, targetPath.length);
+          return targetPath.substring(13, targetPath.length);
         },
       },
       {
-        from: 'src/**/*.png',
+        from: 'src/examples/**/*.png',
         to: './',
         transformPath(targetPath) {
-          return targetPath.substring(4, targetPath.length);
+          return targetPath.substring(13, targetPath.length);
         },
       },
       {
-        from: 'src/**/*.png',
+        from: 'src/examples/**/*.png',
         to: './',
         transformPath(targetPath) {
-          return targetPath.substring(4, targetPath.length);
+          return targetPath.substring(13, targetPath.length);
         },
       },
       {
-        from: 'src/**/*.xml',
+        from: 'src/examples/**/*.xml',
         to: './',
         transformPath(targetPath) {
-          return targetPath.substring(4, targetPath.length);
+          return targetPath.substring(13, targetPath.length);
         },
       },
       {
-        from: 'src/**/*.atlas',
+        from: 'src/examples/**/*.atlas',
         to: './',
         transformPath(targetPath) {
-          return targetPath.substring(4, targetPath.length);
+          return targetPath.substring(13, targetPath.length);
         },
       },
     ]),
     new HtmlWebpackPlugin({
-      title: 'TypeScript & PixiJS',
-      template: './src/home.html',
-      chunks: ['home'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'examples.html',
       title: 'PixiJS - Examples',
       template: './src/examples/examples.html',
       chunks: ['examples'],
@@ -210,8 +243,41 @@ module.exports = {
       title: 'PixiJS - Spineboy Pro',
       chunks: ['spineboy_pro'],
     }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist/examples'),
+  },
+});
+
+const benchmarksConfig = Object.assign({}, commonConfig, {
+  name: 'benchmarks',
+  entry: {
+    benchmarks: './src/benchmarks/benchmarks.ts',
+    add_remove_child: './src/benchmarks/run/add_remove_child.ts',
+    filters: './src/benchmarks/run/filters.ts',
+  },
+  devServer: {
+    contentBase: './dist/benchmarks',
+  },
+  plugins: [
+    new CopyPlugin([
+      {
+        from: 'src/benchmarks/**/*.png',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(15, targetPath.length);
+        },
+      },
+      {
+        from: 'src/benchmarks/**/*.png',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(15, targetPath.length);
+        },
+      },
+    ]),
     new HtmlWebpackPlugin({
-      filename: 'benchmarks.html',
       title: 'PixiJS - Benchmarks',
       template: './src/benchmarks/benchmarks.html',
       chunks: ['benchmarks'],
@@ -227,28 +293,10 @@ module.exports = {
       chunks: ['filters'],
     }),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/benchmarks'),
   },
-};
+});
+
+module.exports = [homeConfig, examplesConfig, benchmarksConfig];

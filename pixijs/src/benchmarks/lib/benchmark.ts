@@ -20,7 +20,7 @@ export abstract class Benchmark {
 
   public async init(): Promise<void> {
     return new Promise((resolve) => {
-      this.app.loader.add('bunny', '../benchmarks/assets/bunny.png').load(() => {
+      this.app.loader.add('bunny', '../assets/bunny.png').load(() => {
         resolve();
       });
     });

@@ -41,7 +41,7 @@ function onAssetsLoaded(loader: PIXI.Loader, res: Partial<Record<string, PIXI.Lo
 }
 
 // load spine data
-app.loader.add('dragon', 'examples/examples/assets/spine/dragon.json').load(onAssetsLoaded);
+app.loader.add('dragon', 'examples/assets/spine/dragon.json').load(onAssetsLoaded);
 
 app.ticker.add(() => {
   // update the spine animation, only needed if dragon.autoupdate is set to false
