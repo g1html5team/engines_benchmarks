@@ -84,9 +84,7 @@ class Benchmarks {
 
         let lastResponse = response as AxiosResponse<ConfigResponse>;
 
-        const limit = 5;
-        let cnt = 0;
-        while (lastResponse.status === 200 && cnt++ < limit) {
+        while (lastResponse.status === 200) {
           const capturedWindow = window;
           const { data } = lastResponse;
           const subtitle = document.querySelector('.benchmarks-subtitle');

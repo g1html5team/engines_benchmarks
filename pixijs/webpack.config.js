@@ -258,12 +258,20 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/filters': './src/benchmarks/run/filters.ts',
     'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
     'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
+    'run/atlas': './src/benchmarks/run/atlas.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
   },
   plugins: [
     new CopyPlugin([
+      {
+        from: 'src/benchmarks/**/*.json',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(15, targetPath.length);
+        },
+      },
       {
         from: 'src/benchmarks/**/*.png',
         to: './',
@@ -301,8 +309,13 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: 'run/gpu_slots.html',
-      title: 'Benchmark - Blend mode',
+      title: 'Benchmark - GPU slots',
       chunks: ['run/gpu_slots'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/atlasses.html',
+      title: 'Benchmark - Atlas',
+      chunks: ['run/atlas'],
     }),
   ],
   output: {
