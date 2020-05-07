@@ -27,7 +27,7 @@ let benchmark: Benchmark;
 
 switch (benchmarkId) {
   case 1: {
-    // Simple add benchmark
+    // No atlas - add child
     benchmark = new NoAtlasAddChild(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -37,7 +37,7 @@ switch (benchmarkId) {
     break;
   }
   case 2: {
-    // Simple add remove benchmark
+    // No atlas - 1 sprite
     benchmark = new NoAtlasOneSprite(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -47,6 +47,7 @@ switch (benchmarkId) {
     break;
   }
   case 3: {
+    // No atlas - 100 sprites
     benchmark = new NoAtlas100Sprites(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -56,6 +57,7 @@ switch (benchmarkId) {
     break;
   }
   case 4: {
+    // 1 atlas - add child
     benchmark = new AtlasAddChild(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -65,6 +67,7 @@ switch (benchmarkId) {
     break;
   }
   case 5: {
+    // 1 atlas - 1 sprite
     benchmark = new AtlasOneSprite(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -74,6 +77,7 @@ switch (benchmarkId) {
     break;
   }
   case 6: {
+    // 1 atlas - 100 sprites
     benchmark = new Atlas100Sprites(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -83,6 +87,7 @@ switch (benchmarkId) {
     break;
   }
   case 7: {
+    // 2 atlas - add child
     benchmark = new TwoAtlasesAddChild(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -92,6 +97,7 @@ switch (benchmarkId) {
     break;
   }
   case 8: {
+    // 2 atlas - 1 sprite
     benchmark = new TwoAtlasesOneSprite(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -101,6 +107,7 @@ switch (benchmarkId) {
     break;
   }
   case 9: {
+    // 2 atlas - 100 sprites
     benchmark = new TwoAtlases100Sprites(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -110,6 +117,7 @@ switch (benchmarkId) {
     break;
   }
   case 10: {
+    // 3 atlas - add child
     benchmark = new ThreeAtlasesAddChild(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -119,6 +127,7 @@ switch (benchmarkId) {
     break;
   }
   case 11: {
+    // 3 atlas - 1 sprite
     benchmark = new ThreeAtlasesOneSprite(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -128,6 +137,7 @@ switch (benchmarkId) {
     break;
   }
   case 12: {
+    // 3 atlas - 100 sprites
     benchmark = new ThreeAtlases100Sprites(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {

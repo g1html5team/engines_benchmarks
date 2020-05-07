@@ -97,7 +97,7 @@ const examplesConfig = Object.assign({}, commonConfig, {
         },
       },
       {
-        from: 'src/examples/**/*.png',
+        from: 'src/examples/**/*.jpg',
         to: './',
         transformPath(targetPath) {
           return targetPath.substring(13, targetPath.length);
@@ -259,6 +259,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
     'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
     'run/atlas': './src/benchmarks/run/atlas.ts',
+    'run/flipbook': './src/benchmarks/run/flipbook.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -274,6 +275,13 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       },
       {
         from: 'src/benchmarks/**/*.png',
+        to: './',
+        transformPath(targetPath) {
+          return targetPath.substring(15, targetPath.length);
+        },
+      },
+      {
+        from: 'src/benchmarks/**/*.jpg',
         to: './',
         transformPath(targetPath) {
           return targetPath.substring(15, targetPath.length);
@@ -316,6 +324,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/atlasses.html',
       title: 'Benchmark - Atlas',
       chunks: ['run/atlas'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/flipbook.html',
+      title: 'Benchmark - Flipbook',
+      chunks: ['run/flipbook'],
     }),
   ],
   output: {
