@@ -11,12 +11,12 @@ export class BlendModeBenchmark extends Benchmark {
     private blendMode?: PIXI.BLEND_MODES,
   ) {
     super(width, height);
+    this.assetsToLoad.set('bunny', '../assets/bunny.png');
+    this.assetsToLoad.set('backgroundFields', '../assets/background_fields.jpg');
+    this.assetsToLoad.set('backgroundForest', '../assets/background_forest.jpg');
   }
 
   public async init(): Promise<void> {
-    this.app.loader.add('backgroundFields', '../assets/background_fields.jpg');
-    this.app.loader.add('backgroundForest', '../assets/background_forest.jpg');
-
     await super.init();
 
     const container = new PIXI.Container();

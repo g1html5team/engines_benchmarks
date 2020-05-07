@@ -257,6 +257,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/add_remove_child': './src/benchmarks/run/add_remove_child.ts',
     'run/filters': './src/benchmarks/run/filters.ts',
     'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
+    'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -297,6 +298,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/blend_mode.html',
       title: 'Benchmark - Blend mode',
       chunks: ['run/blend_mode'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/gpu_slots.html',
+      title: 'Benchmark - Blend mode',
+      chunks: ['run/gpu_slots'],
     }),
   ],
   output: {

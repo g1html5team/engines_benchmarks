@@ -13,7 +13,7 @@ export interface BenchmarkConfig {
   filters: string;
   masks: string;
   blend: string;
-  gpuSlot: string;
+  gpu: string;
   atlas: string;
   flipbook: string;
   particles: string;

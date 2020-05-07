@@ -29,7 +29,7 @@ class Benchmarks {
       filters: Benchmarks.getElementValue('filters'),
       masks: Benchmarks.getElementValue('masks'),
       blend: Benchmarks.getElementValue('blend'),
-      gpuSlot: Benchmarks.getElementValue('gpu'),
+      gpu: Benchmarks.getElementValue('gpu'),
       atlas: Benchmarks.getElementValue('atlas'),
       flipbook: Benchmarks.getElementValue('flipbook'),
       particles: Benchmarks.getElementValue('particles'),

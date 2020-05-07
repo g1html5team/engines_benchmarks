@@ -9,6 +9,7 @@ export class SimpleAddRemoveBenchmark extends Benchmark {
 
   public constructor(width: number, height: number, private numberOfObjects: number) {
     super(width, height);
+    this.assetsToLoad.set('bunny', '../assets/bunny.png');
   }
 
   public async init(): Promise<void> {

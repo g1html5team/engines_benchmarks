@@ -5,6 +5,7 @@ export abstract class Benchmark {
   private readonly benchmarkDuration = 5;
   private frameDurations: number[] = [];
   protected app: PIXI.Application;
+  protected assetsToLoad: Map<string, string> = new Map();
 
   protected constructor(width: number, height: number) {
     this.app = new PIXI.Application({
@@ -19,8 +20,12 @@ export abstract class Benchmark {
   }
 
   public async init(): Promise<void> {
+    this.assetsToLoad.forEach((value, key) => {
+      this.app.loader.add(key, value);
+    });
+
     return new Promise((resolve) => {
-      this.app.loader.add('bunny', '../assets/bunny.png').load(() => {
+      this.app.loader.load(() => {
         resolve();
       });
     });
