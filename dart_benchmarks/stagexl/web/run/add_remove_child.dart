@@ -48,6 +48,4 @@ GraphicEngineBenchmark _getEngine(
 
 
   return new StagexlBenchmarkAddRemove(container, canvasWidth,canvasHeight);
-//  return new PixiBenchmarkAddRemove(container, canvasWidth, canvasHeight);
-
 }

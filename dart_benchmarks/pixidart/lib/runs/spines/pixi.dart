@@ -45,6 +45,8 @@ class PixiSpinesBenchmark implements BenchmarkBase {
       firstCompleter.complete();
     }));
     await firstCompleter.future;
+    var v = getTextureFrom('carapace');
+
 
     Map<String, Texture> allTextures = {
       "../assets/spine/images/game5/game5/carapace": (getTextureFrom("carapace")),
@@ -61,7 +63,7 @@ class PixiSpinesBenchmark implements BenchmarkBase {
       "../assets/spine/images/game5/game5/shadow2": (getTextureFrom("shadow2")),
       "../assets/spine/images/game5/game5/traces_eau": (getTextureFrom("tracesEau"))
     };
-    Atlas atlas = getAtlas(new JsObject.jsify(allTextures));
+    Atlas atlas = getAtlas(allTextures);
 
     Completer secondCompleter = new Completer();
     loaderAddSkeletonDataWithExistingAtlas(
@@ -92,5 +94,6 @@ class PixiSpinesBenchmark implements BenchmarkBase {
     layout.addChild(container);
   }
 
-  eachFrameFunction([num v]) {}
+  eachFrameFunction([num v]) {
+  }
 }

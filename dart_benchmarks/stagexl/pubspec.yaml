@@ -8,6 +8,7 @@ environment:
 dependencies:
   stagexl: ^1.4.4
   stagexl_spine: ^0.10.1
+  stagexl_particle: ^0.4.1
   shelf_router: ^0.7.2
   shelf_packages_handler: ^2.0.0
   shelf_proxy: ^0.1.0+7

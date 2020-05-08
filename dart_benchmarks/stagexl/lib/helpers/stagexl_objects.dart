@@ -9,6 +9,13 @@ class FixedContainer extends DisplayObjectContainer {
   }
 }
 
+class SpriteContainer extends DisplayObjectContainer
+
+{
+}
+
+
+
 num degreesToRadians(num degrees) => degrees * math.pi / 180;
 num radiansToDegrees(num radiants) => radiants * 180 / math.pi
 ;

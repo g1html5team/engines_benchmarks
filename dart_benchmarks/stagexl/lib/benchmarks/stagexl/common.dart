@@ -14,7 +14,7 @@ class StageXlBenchmark implements GraphicEngineBenchmark {
   Stage app;
   FixedContainer layout;
 
-  StageXlBenchmark(this.container, this.canvasWidth, this.canvasHeight) {
+  StageXlBenchmark(this.container, this.canvasWidth, this.canvasHeight, [bool useWebgl = false]) {
     initialize();
     manager = new BenchmarkManager(
         interface, canvasWidth, canvasHeight, frameRendering, layout);
@@ -22,13 +22,15 @@ class StageXlBenchmark implements GraphicEngineBenchmark {
   }
 
   initialize() {
-
-    canvas = new CanvasElement(width: canvasWidth, height: canvasHeight);
+  canvas = querySelector('canvas');
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
 
     app = new Stage(canvas);
+    app.backgroundColor = Color.Aqua;
     layout = new FixedContainer(canvasWidth, canvasHeight);
-    layout.x = -canvasWidth / 2;
-    layout.y = -canvasHeight / 2;
+//    layout.x = -canvasWidth / 2;
+//    layout.y = -canvasHeight / 2;
     app.addChild(layout);
   }
 

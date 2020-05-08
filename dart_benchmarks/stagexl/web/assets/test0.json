@@ -1,0 +1,92 @@
+{"frames": [
+
+{
+	"filename": "carapace.png",
+	"frame": {"x":0,"y":0,"w":134,"h":88},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":88},
+	"sourceSize": {"w":134,"h":88}
+},
+{
+	"filename": "carapace_back.png",
+	"frame": {"x":134,"y":0,"w":41,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":41,"h":57},
+	"sourceSize": {"w":41,"h":57}
+},
+{
+	"filename": "head.png",
+	"frame": {"x":175,"y":0,"w":94,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":89},
+	"sourceSize": {"w":94,"h":89}
+},
+{
+	"filename": "neck.png",
+	"frame": {"x":269,"y":0,"w":56,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":43},
+	"sourceSize": {"w":56,"h":43}
+},
+{
+	"filename": "patte_full.png",
+	"frame": {"x":325,"y":0,"w":89,"h":87},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":87},
+	"sourceSize": {"w":89,"h":87}
+},
+{
+	"filename": "phyla_tortue.png",
+	"frame": {"x":414,"y":0,"w":95,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":114},
+	"sourceSize": {"w":95,"h":114}
+},
+{
+	"filename": "sand.png",
+	"frame": {"x":509,"y":0,"w":76,"h":60},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":76,"h":60},
+	"sourceSize": {"w":76,"h":60}
+},
+{
+	"filename": "shadow.png",
+	"frame": {"x":585,"y":0,"w":282,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":282,"h":103},
+	"sourceSize": {"w":282,"h":103}
+},
+{
+	"filename": "shadow2.png",
+	"frame": {"x":867,"y":0,"w":131,"h":87},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":131,"h":87},
+	"sourceSize": {"w":131,"h":87}
+},
+{
+	"filename": "traces_eau.png",
+	"frame": {"x":0,"y":114,"w":1020,"h":844},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1020,"h":844},
+	"sourceSize": {"w":1020,"h":844}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "test0.png",
+	"format": "RGBA8888",
+	"size": {"w":1020,"h":958},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2db03fcc34de2ccff6119f80a8f14521:638b7d6f3dad2720048524f16c33f04e:367c578cc8a2d247d0ed81d148047c95$"
+}
+}
