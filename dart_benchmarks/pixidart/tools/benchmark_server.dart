@@ -303,7 +303,6 @@ class _BenchmarkRun {
     result[benchmark] = new Map();
 
     if (config.runChildren) {
-      print("A");
       result[benchmark]["simple add"] = new Map();
       result[benchmark]["simple add remove"] = new Map();
       result[benchmark]["add remove container"] = new Map();
@@ -314,7 +313,6 @@ class _BenchmarkRun {
       result[benchmark][filters + ' ' + hue] = new Map();
     }
 
-    //TODO: reimplements
 //    if (config.runMasks) {
 //      result[benchmark][mask + ' ' + size + ' 50*50'] = new Map();
 //      result[benchmark][mask + ' ' + size + ' 250*250'] = new Map();
@@ -428,30 +426,28 @@ class _BenchmarkRun {
 
   _buildRuns() {
     List<int> childrenData = [1000];
-//    List<int> labelsData = [50];
-    //TODO: reimplements
+    List<int> labelsData = [50];
 //    List<int> maskData = [50, 250, 500];
 
-//    List<int> shaders = [10];
+    List<int> shaders = [10];
 
     List<String> _childrenStep = [
       "simple add",
       "simple add remove",
       "add remove container"
     ];
-//
-//    List<String> _filtersStep = [
-//      filters + ' ' + brightness,
-//      filters + ' ' + hue
-//    ];
 
-    //TODO: reimplements
+    List<String> _filtersStep = [
+      filters + ' ' + brightness,
+      filters + ' ' + hue
+    ];
+
 //    List<String> _masksStep = [
 //      mask + ' ' + size + ' 50*50',
 //      mask + ' ' + size + ' 250*250',
 //      mask + ' ' + size + ' 500*500'
 //    ];
-//
+
     List<String> _blendModeStep = [
       "blend mode normal",
       "blend mode add",
@@ -459,53 +455,53 @@ class _BenchmarkRun {
       "blend mode overlay",
       "blend mode screen"
     ];
-//
-//    List<String> _atlasStep = [
-//      "atlas - no atlas - add child",
-//      "atlas - no atlas - 1 bitmap",
-//      "atlas - no atlas - 100 bitmap",
-//      "atlas - 1 atlas - add child",
-//      "atlas - 1 atlas - 1 bitmap",
-//      "atlas - 1 atlas - 100 bitmap",
-//      "atlas - 2 atlas - add child",
-//      "atlas - 2 atlas - 1 bitmap",
-//      "atlas - 2 atlas - 100 bitmap",
-//      "atlas - 3 atlas - add child",
-//      "atlas - 3 atlas - 1 bitmap",
-//      "atlas - 3 atlas - 100 bitmap"
-//    ];
-//
-//    List<String> _particlesStep = ["particles - A", "particles - B"];
-//
-//    List<String> _shaderStep = [
-//      "shader - blur",
-//      "shader - glow",
-//      "shader - displacement",
-//      "shader - step by step",
-//      "shader - all"
-//    ];
-//
-//    List<String> _shapeStep = [
-//      "shape - rect",
-//      "shape - bezier",
-//      "shape - quadratic",
-//      "shape - line",
-//      "shape - arc"
-//    ];
-//
-//    List<String> _visibilityStep = [
-//      "visibility - out of scene",
-//      "visibility - visibility false",
-//      "visibility - alpha 0",
-//      "visibility - move outside",
-//      "visibility - scale 0"
-//    ];
-//
-//    List<String> _zIndexStep = [
-//      "zindex - one child",
-//      "zindex - all child",
-//      "zindex - all child several textures"
-//    ];
+
+    List<String> _atlasStep = [
+      "atlas - no atlas - add child",
+      "atlas - no atlas - 1 bitmap",
+      "atlas - no atlas - 100 bitmap",
+      "atlas - 1 atlas - add child",
+      "atlas - 1 atlas - 1 bitmap",
+      "atlas - 1 atlas - 100 bitmap",
+      "atlas - 2 atlas - add child",
+      "atlas - 2 atlas - 1 bitmap",
+      "atlas - 2 atlas - 100 bitmap",
+      "atlas - 3 atlas - add child",
+      "atlas - 3 atlas - 1 bitmap",
+      "atlas - 3 atlas - 100 bitmap"
+    ];
+
+    List<String> _particlesStep = ["particles - A", "particles - B"];
+
+    List<String> _shaderStep = [
+      "shader - blur",
+      "shader - glow",
+      "shader - displacement",
+      "shader - step by step",
+      "shader - all"
+    ];
+
+    List<String> _shapeStep = [
+      "shape - rect",
+      "shape - bezier",
+      "shape - quadratic",
+      "shape - line",
+      "shape - arc"
+    ];
+
+    List<String> _visibilityStep = [
+      "visibility - out of scene",
+      "visibility - visibility false",
+      "visibility - alpha 0",
+      "visibility - move outside",
+      "visibility - scale 0"
+    ];
+
+    List<String> _zIndexStep = [
+      "zindex - one child",
+      "zindex - all child",
+      "zindex - all child several textures"
+    ];
 
     int basePort = 10001;
 
@@ -534,34 +530,36 @@ class _BenchmarkRun {
         };
       }
     }
-//
-//    if (config.runFilters) {
-//      int benchmarkID = 1;
-//      for (String step in _filtersStep) {
-//        for (int data in childrenData) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/filters.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "engine": engine,
-//                "step": step,
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
 
-//    Todo: reimplements
+    if (config.runFilters) {
+      int benchmarkID = 1;
+      for (String step in _filtersStep) {
+        for (int data in childrenData) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/filters.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "engine": engine,
+                "step": step,
+                "parameter": _key(data)
+
+
+              };
+              _logger.info(basePort);
+              runs.add(run);
+            }
+          }
+        }
+        benchmarkID++;
+      }
+    }
+
 //    if (config.runMasks) {
 //      int benchmarkID = 1;
 //      for (String step in _masksStep) {
@@ -572,7 +570,7 @@ class _BenchmarkRun {
 //                Map<String, String> run = {
 //                  "target": config.target,
 //                  "id": benchmarkID.toString(),
-//                  "baseUrl": '$_baseIp:${basePort++}',
+//                  "baseUrl": '$_baseIp:${basePort}',
 //                  "path": '/run/masks',
 //                  "cw": config.canvasWidth.toString(),
 //                  "ch": config.canvasHeight.toString(),
@@ -616,265 +614,265 @@ class _BenchmarkRun {
         benchmarkID++;
       }
     }
-//
-//    if (config.runGpuSlot) {
-//      for (String engine in _runEngine.keys) {
-//        if (_runEngine[engine]) {
-//          Map<String, String> run = {
-//            "target": config.target,
-//            "id": "1",
-//            "baseUrl": '$_baseIp:${basePort++}',
-//            "path": '/run/gpu_slots/gpu_slots.html',
-//            "cw": config.canvasWidth.toString(),
-//            "ch": config.canvasHeight.toString(),
-//            "nbObj": "0",
-//            "engine": engine,
-//            "step": "GPU overflow",
-//            "parameter": _key(0)
-//          };
-//          runs.add(run);
-//        }
-//      }
-//    }
-//
-//    if (config.runAddRemoveContainer) {
-//      for (int data in childrenData) {
-//        for (String engine in _runEngine.keys) {
-//          if (_runEngine[engine]) {
-//            Map<String, String> run = {
-//              "target": config.target,
-//              "id": "0",
-//              "baseUrl": '$_baseIp:${basePort++}',
-//              "path": '/run/add_remove.html',
-//              "cw": config.canvasWidth.toString(),
-//              "ch": config.canvasHeight.toString(),
-//              "nbObj": data.toString(),
-//              "engine": engine,
-//              "step": "add remove container",
-//              "parameter": _key(data)
-//            };
-//            runs.add(run);
-//          }
-//        }
-//      }
-//    }
-//
-//    if (config.runAtlas) {
-//      int benchmarkID = 1;
-//      for (String step in _atlasStep) {
-//        for (String engine in _runEngine.keys) {
-//          if (_runEngine[engine]) {
-//            Map<String, String> run = {
-//              "target": config.target,
-//              "id": benchmarkID.toString(),
-//              "baseUrl": '$_baseIp:${basePort++}',
-//              "path": '/run/atlasses.html',
-//              "cw": config.canvasWidth.toString(),
-//              "ch": config.canvasHeight.toString(),
-//              "nbObj": "1",
-//              "engine": engine,
-//              "step": step,
-//              "parameter": _key(1)
-//            };
-//            runs.add(run);
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
-//
-//    if (config.runFlipbook) {
-//      for (String engine in _runEngine.keys) {
-//        if (_runEngine[engine]) {
-//          Map<String, String> run = {
-//            "target": config.target,
-//            "baseUrl": '$_baseIp:${basePort++}',
-//            "path": '/run/flipbook.html',
-//            "cw": config.canvasWidth.toString(),
-//            "ch": config.canvasHeight.toString(),
-//            "engine": engine,
-//            "step": "flipbooks",
-//            "parameter": _key(1)
-//          };
-//          runs.add(run);
-//        }
-//      }
-//    }
-//
-//    if (config.runParticles) {
-//      int benchmarkID = 1;
-//      for (String step in _particlesStep) {
-//        for (String engine in _runEngine.keys) {
-//          if (_runEngine[engine]) {
-//            Map<String, String> run = {
-//              "target": config.target,
-//              "id": benchmarkID.toString(),
-//              "baseUrl": '$_baseIp:${basePort++}',
-//              "path": '/run/particles.html',
-//              "cw": config.canvasWidth.toString(),
-//              "ch": config.canvasHeight.toString(),
-//              "nbObj": "1",
-//              "engine": engine,
-//              "step": step,
-//              "parameter": _key(1)
-//            };
-//            runs.add(run);
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
-//
-//    if (config.runRenderTexture) {
-//      for (String engine in _runEngine.keys) {
-//        if (_runEngine[engine]) {
-//          Map<String, String> run = {
-//            "target": config.target,
-//            "id": "1",
-//            "baseUrl": '$_baseIp:${basePort++}',
-//            "path": '/run/render_texture.html',
-//            "cw": config.canvasWidth.toString(),
-//            "ch": config.canvasHeight.toString(),
-//            "nbObj": "1",
-//            "engine": engine,
-//            "step": "render texture",
-//            "parameter": _key(1)
-//          };
-//          runs.add(run);
-//        }
-//      }
-//    }
-//
-//    if (config.runShader) {
-//      int benchmarkID = 1;
-//      for (int data in shaders) {
-//        for (String step in _shaderStep) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/shaders.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "engine": engine,
-//                "step": step,
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//          benchmarkID++;
-//        }
-//      }
-//    }
-//
-//    if (config.runShape) {
-//      int benchmarkID = 1;
-//      for (String step in _shapeStep) {
-//        for (int data in childrenData) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/shape.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "engine": engine,
-//                "step": step,
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
-//
-//    if (config.runSpine) {
-//      int benchmarkID = 1;
-//      for (int deform in shaders) {
-//        for (int data in labelsData) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/spines.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "nbDeformObj": deform.toString(),
-//                "engine": engine,
-//                "step": "spine - $deform deforms",
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//        }
-//      }
-//      benchmarkID++;
-//    }
-//
-//    if (config.runVisibility) {
-//      int benchmarkID = 1;
-//      for (String step in _visibilityStep) {
-//        for (int data in childrenData) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/visibility.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "engine": engine,
-//                "step": step,
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
 
-//    if (config.runZindex) {
-//      int benchmarkID = 1;
-//      for (String step in _zIndexStep) {
-//        for (int data in childrenData) {
-//          for (String engine in _runEngine.keys) {
-//            if (_runEngine[engine]) {
-//              Map<String, String> run = {
-//                "target": config.target,
-//                "id": benchmarkID.toString(),
-//                "baseUrl": '$_baseIp:${basePort++}',
-//                "path": '/run/zindex.html',
-//                "cw": config.canvasWidth.toString(),
-//                "ch": config.canvasHeight.toString(),
-//                "nbObj": data.toString(),
-//                "engine": engine,
-//                "step": step,
-//                "parameter": _key(data)
-//              };
-//              runs.add(run);
-//            }
-//          }
-//        }
-//        benchmarkID++;
-//      }
-//    }
+    if (config.runGpuSlot) {
+      for (String engine in _runEngine.keys) {
+        if (_runEngine[engine]) {
+          Map<String, String> run = {
+            "target": config.target,
+            "id": "1",
+            "baseUrl": '$_baseIp:${basePort}',
+            "path": '/run/gpu_slots/gpu_slots.html',
+            "cw": config.canvasWidth.toString(),
+            "ch": config.canvasHeight.toString(),
+            "nbObj": "0",
+            "engine": engine,
+            "step": "GPU overflow",
+            "parameter": _key(0)
+          };
+          runs.add(run);
+        }
+      }
+    }
+
+    if (config.runAddRemoveContainer) {
+      for (int data in childrenData) {
+        for (String engine in _runEngine.keys) {
+          if (_runEngine[engine]) {
+            Map<String, String> run = {
+              "target": config.target,
+              "id": "0",
+              "baseUrl": '$_baseIp:${basePort}',
+              "path": '/run/add_remove.html',
+              "cw": config.canvasWidth.toString(),
+              "ch": config.canvasHeight.toString(),
+              "nbObj": data.toString(),
+              "engine": engine,
+              "step": "add remove container",
+              "parameter": _key(data)
+            };
+            runs.add(run);
+          }
+        }
+      }
+    }
+
+    if (config.runAtlas) {
+      int benchmarkID = 1;
+      for (String step in _atlasStep) {
+        for (String engine in _runEngine.keys) {
+          if (_runEngine[engine]) {
+            Map<String, String> run = {
+              "target": config.target,
+              "id": benchmarkID.toString(),
+              "baseUrl": '$_baseIp:${basePort}',
+              "path": '/run/atlasses.html',
+              "cw": config.canvasWidth.toString(),
+              "ch": config.canvasHeight.toString(),
+              "nbObj": "1",
+              "engine": engine,
+              "step": step,
+              "parameter": _key(1)
+            };
+            runs.add(run);
+          }
+        }
+        benchmarkID++;
+      }
+    }
+
+    if (config.runFlipbook) {
+      for (String engine in _runEngine.keys) {
+        if (_runEngine[engine]) {
+          Map<String, String> run = {
+            "target": config.target,
+            "baseUrl": '$_baseIp:${basePort}',
+            "path": '/run/flipbook.html',
+            "cw": config.canvasWidth.toString(),
+            "ch": config.canvasHeight.toString(),
+            "engine": engine,
+            "step": "flipbooks",
+            "parameter": _key(1)
+          };
+          runs.add(run);
+        }
+      }
+    }
+
+    if (config.runParticles) {
+      int benchmarkID = 1;
+      for (String step in _particlesStep) {
+        for (String engine in _runEngine.keys) {
+          if (_runEngine[engine]) {
+            Map<String, String> run = {
+              "target": config.target,
+              "id": benchmarkID.toString(),
+              "baseUrl": '$_baseIp:${basePort}',
+              "path": '/run/particles.html',
+              "cw": config.canvasWidth.toString(),
+              "ch": config.canvasHeight.toString(),
+              "nbObj": "1",
+              "engine": engine,
+              "step": step,
+              "parameter": _key(1)
+            };
+            runs.add(run);
+          }
+        }
+        benchmarkID++;
+      }
+    }
+
+    if (config.runRenderTexture) {
+      for (String engine in _runEngine.keys) {
+        if (_runEngine[engine]) {
+          Map<String, String> run = {
+            "target": config.target,
+            "id": "1",
+            "baseUrl": '$_baseIp:${basePort}',
+            "path": '/run/render_texture.html',
+            "cw": config.canvasWidth.toString(),
+            "ch": config.canvasHeight.toString(),
+            "nbObj": "1",
+            "engine": engine,
+            "step": "render texture",
+            "parameter": _key(1)
+          };
+          runs.add(run);
+        }
+      }
+    }
+
+    if (config.runShader) {
+      int benchmarkID = 1;
+      for (int data in shaders) {
+        for (String step in _shaderStep) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/shaders.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "engine": engine,
+                "step": step,
+                "parameter": _key(data)
+              };
+              runs.add(run);
+            }
+          }
+          benchmarkID++;
+        }
+      }
+    }
+
+    if (config.runShape) {
+      int benchmarkID = 1;
+      for (String step in _shapeStep) {
+        for (int data in childrenData) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/shape.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "engine": engine,
+                "step": step,
+                "parameter": _key(data)
+              };
+              runs.add(run);
+            }
+          }
+        }
+        benchmarkID++;
+      }
+    }
+
+    if (config.runSpine) {
+      int benchmarkID = 1;
+      for (int deform in shaders) {
+        for (int data in labelsData) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/spines.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "nbDeformObj": deform.toString(),
+                "engine": engine,
+                "step": "spine - $deform deforms",
+                "parameter": _key(data)
+              };
+              runs.add(run);
+            }
+          }
+        }
+      }
+      benchmarkID++;
+    }
+
+    if (config.runVisibility) {
+      int benchmarkID = 1;
+      for (String step in _visibilityStep) {
+        for (int data in childrenData) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/visibility.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "engine": engine,
+                "step": step,
+                "parameter": _key(data)
+              };
+              runs.add(run);
+            }
+          }
+        }
+        benchmarkID++;
+      }
+    }
+
+    if (config.runZindex) {
+      int benchmarkID = 1;
+      for (String step in _zIndexStep) {
+        for (int data in childrenData) {
+          for (String engine in _runEngine.keys) {
+            if (_runEngine[engine]) {
+              Map<String, String> run = {
+                "target": config.target,
+                "id": benchmarkID.toString(),
+                "baseUrl": '$_baseIp:${basePort}',
+                "path": '/run/zindex.html',
+                "cw": config.canvasWidth.toString(),
+                "ch": config.canvasHeight.toString(),
+                "nbObj": data.toString(),
+                "engine": engine,
+                "step": step,
+                "parameter": _key(data)
+              };
+              runs.add(run);
+            }
+          }
+        }
+        benchmarkID++;
+      }
+    }
   }
 
   addResult(Map req) {
@@ -932,7 +930,7 @@ class _Config {
     runChildren = base["runChildren"] == "true";
     runLabels = base["runLabels"] == "true";
     runFilters = base["runFilters"] == "true";
-    runMasks = base["runMasks"] == "true";
+//    runMasks = base["runMasks"] == "true";
     runBlendMode = base["runBlendMode"] == "true";
     runGpuSlot = base["runGpuSlot"] == "true";
     runAddRemoveContainer = base["runAddRemoveContainer"] == "true";

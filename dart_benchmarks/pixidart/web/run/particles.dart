@@ -12,7 +12,7 @@ main() async {
   Map<String, String> params = Uri.base.queryParameters;
   if (params == null || params.isEmpty) {
     params = new Map();
-    params['engine'] = 'pixi'; //ng1n stagexl pixi
+    params['engine'] = 'stagexl'; //ng1n stagexl pixi
     params['nbObj'] = '20';
     params['id'] = '1';
     params['cw'] = '1280';

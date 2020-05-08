@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "mer.png",
+	"frame": {"x":0,"y":0,"w":998,"h":793},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":998,"h":793},
+	"sourceSize": {"w":998,"h":793}
+},
+{
+	"filename": "mer_top.png",
+	"frame": {"x":998,"y":0,"w":998,"h":793},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":998,"h":793},
+	"sourceSize": {"w":998,"h":793}
+},
+{
+	"filename": "sable.jpg",
+	"frame": {"x":0,"y":793,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+},
+{
+	"filename": "traces_eau.png",
+	"frame": {"x":0,"y":1873,"w":1020,"h":844},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1020,"h":844},
+	"sourceSize": {"w":1020,"h":844}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "test1.png",
+	"format": "RGBA8888",
+	"size": {"w":1996,"h":2717},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:908edb01900893ad820cf97ac2e135a8:f0263e740f1532333930a3d05b517532:9c544c7c5c4d6dc1ccdf4b7452c3dea5$"
+}
+}

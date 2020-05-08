@@ -24,15 +24,6 @@ abstract class GraphicEngineBenchmark {
   frameRendering(num v);
 }
 
-GraphicEngineBenchmark getBenchmarkEngine(
-    Map<String, String> parameters, Element container) {
-  int canvasWidth = int.parse(parameters['cw']);
-  int canvasHeight = int.parse(parameters['ch']);
-
-//    return new PixiBenchmark(container,canvasWidth, canvasHeight);
-
-}
-
 abstract class BenchmarkBase {
   int get canvasWidth;
   int get canvasHeight;

@@ -15,6 +15,7 @@ class SimpleAddBenchmark implements BenchmarkBase {
 
   SimpleAddBenchmark(this.interface, this.nbOfObjects, this.layout,
       this.canvasWidth, this.canvasHeight) {
+
     _container = interface.createContainer();
     var data = interface.createBitmapData(querySelector('#bunny'), 'bunny.png');
 

@@ -10,16 +10,11 @@ class BenchmarkRenderTextureManager extends BenchmarkManager {
       : super(interface, canvasWidth, canvasHeight, frameRendering, layout);
 
   Future<Map> createTexture() async {
-    print("createTexture");
     RenderTextureBenchmark benchmark = new RenderTextureBenchmark(
         interface, layout, canvasWidth, canvasHeight);
-    print("loadAssets");
     await benchmark.loadAssets();
-    print("initialize");
     await benchmark.initialize();
-    print("runner");
     BenchmarkRunner runner = new BenchmarkRunner(benchmark, frameRendering);
-    print("run");
     BenchmarkResult result = await runner.run();
 
     return processResult(result);
