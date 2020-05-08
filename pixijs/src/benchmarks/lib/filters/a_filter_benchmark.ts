@@ -21,7 +21,7 @@ export abstract class AFilterBenchmark extends Benchmark {
       bunny.x = Math.random() * this.app.renderer.screen.width;
       bunny.y = Math.random() * this.app.renderer.screen.height;
       bunny.rotation = Math.random() * Math.PI;
-      bunny.anchor = new PIXI.Point(0.5);
+      bunny.anchor = new PIXI.Point(0.5, 0.5);
 
       this.bunnies.push(bunny);
     }

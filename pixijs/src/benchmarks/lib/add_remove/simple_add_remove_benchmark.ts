@@ -19,7 +19,7 @@ export class SimpleAddRemoveBenchmark extends Benchmark {
       const bunny = new PIXI.Sprite(this.app.loader.resources.bunny.texture);
       this.container.addChild(bunny);
       this.setRandomPosition(bunny);
-      bunny.anchor = new PIXI.Point(0.5);
+      bunny.anchor = new PIXI.Point(0.5, 0.5);
       this.bunnies.push(bunny);
     }
 

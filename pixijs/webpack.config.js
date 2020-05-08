@@ -261,6 +261,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/atlas': './src/benchmarks/run/atlas.ts',
     'run/flipbook': './src/benchmarks/run/flipbook.ts',
     'run/particles': './src/benchmarks/run/particles.ts',
+    'run/render_texture': './src/benchmarks/run/render_texture.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -335,6 +336,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/particles.html',
       title: 'Benchmark - Particles',
       chunks: ['run/particles'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/render_texture.html',
+      title: 'Benchmark - Render texture',
+      chunks: ['run/render_texture'],
     }),
   ],
   output: {

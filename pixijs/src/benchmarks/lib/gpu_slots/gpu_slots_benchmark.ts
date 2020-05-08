@@ -22,7 +22,7 @@ export class GPUSlotsBenchmark extends Benchmark {
       this.container.addChild(character);
       character.x = Math.random() * this.app.renderer.screen.width;
       character.y = Math.random() * this.app.renderer.screen.height;
-      character.anchor = new PIXI.Point(0.5);
+      character.anchor = new PIXI.Point(0.5, 0.5);
       this.characters.push(character);
     });
 

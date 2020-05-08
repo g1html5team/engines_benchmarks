@@ -17,7 +17,7 @@ export interface BenchmarkConfig {
   atlas: string;
   flipbook: string;
   particles: string;
-  renderTexture: string;
+  render_texture: string;
   shader: string;
   spine: string;
   visibility: string;

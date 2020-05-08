@@ -33,7 +33,7 @@ class Benchmarks {
       atlas: Benchmarks.getElementValue('atlas'),
       flipbook: Benchmarks.getElementValue('flipbook'),
       particles: Benchmarks.getElementValue('particles'),
-      renderTexture: Benchmarks.getElementValue('texture'),
+      render_texture: Benchmarks.getElementValue('texture'),
       shader: Benchmarks.getElementValue('shader'),
       spine: Benchmarks.getElementValue('spine'),
       visibility: Benchmarks.getElementValue('visibility'),
