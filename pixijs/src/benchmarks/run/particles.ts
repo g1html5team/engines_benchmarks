@@ -1,7 +1,6 @@
 import '../../canvas.css';
 import * as Toastr from 'toastr';
 import { Benchmark } from '../lib/benchmark';
-import { AddRemoveContainerBenchmark } from '../lib/add_remove/add_remove_container_benchmark';
 import { ParticlesBrightnessBenchmark } from '../lib/particles/particles_brightness_benchmark';
 import { ParticlesBenchmark } from '../lib/particles/particles_benchmark';
 
@@ -29,17 +28,7 @@ switch (benchmarkId) {
   }
   case 2: {
     // Particles benchmark
-    // TODO (sch) this is not implemented
     benchmark = new ParticlesBenchmark(width, height, numberOfObjects);
-    benchmark.init().then(() => {
-      benchmark.run().then((result) => {
-        window.parent.postMessage(result.toString(), parentWindowTarget);
-      });
-    });
-    break;
-  }
-  case 3: {
-    benchmark = new AddRemoveContainerBenchmark(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
         window.parent.postMessage(result.toString(), parentWindowTarget);

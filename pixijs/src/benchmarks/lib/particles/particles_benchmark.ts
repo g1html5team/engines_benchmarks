@@ -42,7 +42,7 @@ export class ParticlesBenchmark extends Benchmark {
 
   protected eachFrameCallback(): void {
     this.particles.forEach(() => {
-      // TODO (sch) former benchmark does nothing
+      // TODO (sch)
     });
   }
 }
