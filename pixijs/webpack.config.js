@@ -262,6 +262,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/flipbook': './src/benchmarks/run/flipbook.ts',
     'run/particles': './src/benchmarks/run/particles.ts',
     'run/render_texture': './src/benchmarks/run/render_texture.ts',
+    'run/shaders': './src/benchmarks/run/shaders.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -341,6 +342,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/render_texture.html',
       title: 'Benchmark - Render texture',
       chunks: ['run/render_texture'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/shaders.html',
+      title: 'Benchmark - Shaders',
+      chunks: ['run/shaders'],
     }),
   ],
   output: {
