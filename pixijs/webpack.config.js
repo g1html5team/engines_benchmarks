@@ -260,6 +260,7 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
     'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
     'run/atlas': './src/benchmarks/run/atlas.ts',
     'run/flipbook': './src/benchmarks/run/flipbook.ts',
+    'run/particles': './src/benchmarks/run/particles.ts',
   },
   devServer: {
     contentBase: './dist/benchmarks',
@@ -329,6 +330,11 @@ const benchmarksConfig = Object.assign({}, commonConfig, {
       filename: 'run/flipbook.html',
       title: 'Benchmark - Flipbook',
       chunks: ['run/flipbook'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'run/particles.html',
+      title: 'Benchmark - Particles',
+      chunks: ['run/particles'],
     }),
   ],
   output: {
