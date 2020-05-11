@@ -27,10 +27,8 @@ class StageXlBenchmark implements GraphicEngineBenchmark {
     canvas.height = canvasHeight;
 
     app = new Stage(canvas);
-    app.backgroundColor = Color.Aqua;
+    app.backgroundColor = Color.Black;
     layout = new FixedContainer(canvasWidth, canvasHeight);
-//    layout.x = -canvasWidth / 2;
-//    layout.y = -canvasHeight / 2;
     app.addChild(layout);
   }
 

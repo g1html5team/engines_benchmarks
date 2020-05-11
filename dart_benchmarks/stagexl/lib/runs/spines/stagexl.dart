@@ -58,21 +58,18 @@ class StagexlSpinesBenchmark implements BenchmarkBase {
   math.Random rdm = new math.Random();
   SpinesStageXLAssets assets;
   SpriteContainer container = new SpriteContainer();
-  List<SkeletonAnimation> _turtles = [];
+  List<SkeletonAnimation> _animatedObjects = [];
 
-  Stage juggler;
+
   StagexlSpinesBenchmark(
       this.interface,
       this.nbOfObjects,
       this.nbOfDeformObjects,
       this.layout,
       this.canvasWidth,
-      this.canvasHeight,
-      this.juggler);
+      this.canvasHeight);
 
   init() async {
-    RenderLoop renderLoop = new RenderLoop();
-    renderLoop.addStage(juggler);
 
     assets = SpinesStageXLAssets();
     await assets.load();
@@ -88,8 +85,7 @@ class StagexlSpinesBenchmark implements BenchmarkBase {
       wave.y = -360 + i * ((-360) / nbOfDeformObjects);
 
       container.addChild(wave);
-
-      juggler.juggler.add(wave);
+      _animatedObjects.add(wave);
 
     }
 //
@@ -102,13 +98,26 @@ class StagexlSpinesBenchmark implements BenchmarkBase {
       turtle.x = rdm.nextInt(canvasWidth ~/ 2);
       turtle.y = rdm.nextInt(canvasHeight ~/ 2);
 
-      _turtles.add(turtle);
+      _animatedObjects.add(turtle);
       container.addChild(turtle);
-
-      juggler.juggler.add(turtle);
     }
     layout.addChild(container);
   }
 
-  eachFrameFunction([num v]) {}
+  num time = 0;
+
+  eachFrameFunction([num v]) {
+    if(v != null)
+      {
+        num delaTime = (v - time) / 1000;
+        print(delaTime);
+        time = v;
+
+        _animatedObjects.forEach((turtle)
+        {
+          turtle.advanceTime(delaTime);
+        });
+      }
+
+  }
 }
