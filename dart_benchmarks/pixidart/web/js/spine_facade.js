@@ -5,7 +5,7 @@ function getTextureAtlas(textures){
     var atlas = new PIXI.spine.core.TextureAtlas();
     console.log(textures);
 
-    var cul = {
+    var customSpineAtlas = {
         "images/game5/game5/carapace": (getTextureFrom("carapace")),
         "images/game5/game5/carapace_back": (getTextureFrom("carapaceBack")),
         "images/game5/game5/head": (getTextureFrom("head")),
@@ -22,8 +22,7 @@ function getTextureAtlas(textures){
     };
 
 
-        atlas.addTextureHash(cul, false);
-    console.log("CEFINI");
+        atlas.addTextureHash(customSpineAtlas, false);
     return atlas;
 }
 

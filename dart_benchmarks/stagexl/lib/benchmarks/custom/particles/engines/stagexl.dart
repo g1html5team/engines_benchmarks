@@ -12,6 +12,6 @@ class StagexlBenchmarkParticles extends StageXlBenchmark {
       Element container, int canvasWidth, int canvasHeight, bool useWebGL)
       : super(container, canvasWidth, canvasHeight, useWebGL) {
     manager = new BenchmarkParticlesManager(
-        interface, canvasWidth, canvasHeight, frameRendering, layout, app.juggler);
+        interface, canvasWidth, canvasHeight, frameRendering, layout);
   }
 }

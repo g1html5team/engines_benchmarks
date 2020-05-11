@@ -8,7 +8,7 @@ import '../../../common.dart';
 
 class BenchmarkParticlesManager extends BenchmarkManager {
   BenchmarkParticlesManager(Interface interface, int canvasWidth,
-      int canvasHeight, EachFrameFunction frameRendering, layout, this.juggler)
+      int canvasHeight, EachFrameFunction frameRendering, layout)
       : super(interface, canvasWidth, canvasHeight, frameRendering, layout);
 
   Future<Map> runParticles1Benchmark(int objects) async {
@@ -19,11 +19,10 @@ class BenchmarkParticlesManager extends BenchmarkManager {
     return processResult(result);
   }
 
-  Juggler juggler;
 
   Future<Map> runParticles2Benchmark(int objects) async {
     Particles2Benchmark benchmark = new Particles2Benchmark(
-        interface, objects, layout, canvasWidth, canvasHeight, juggler);
+        interface, objects, layout, canvasWidth, canvasHeight);
     BenchmarkRunner runner = new BenchmarkRunner(benchmark, frameRendering);
     BenchmarkResult result = await runner.run();
     return processResult(result);

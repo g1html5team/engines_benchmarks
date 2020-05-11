@@ -420,7 +420,7 @@ class _BenchmarkRun {
     List<int> childrenData = [1000];
     List<int> labelsData = [50];
 
-    List<int> maskData = [50, 250, 500];
+//    List<int> maskData = [50, 250, 500];
 
     List<int> shaders = [10];
 
@@ -434,12 +434,12 @@ class _BenchmarkRun {
       filters + ' ' + brightness,
       filters + ' ' + hue
     ];
-
-    List<String> _masksStep = [
-      mask + ' ' + size + ' 50*50',
-      mask + ' ' + size + ' 250*250',
-      mask + ' ' + size + ' 500*500'
-    ];
+//
+//    List<String> _masksStep = [
+//      mask + ' ' + size + ' 50*50',
+//      mask + ' ' + size + ' 250*250',
+//      mask + ' ' + size + ' 500*500'
+//    ];
 
     List<String> _blendModeStep = [
       "blend mode normal",
@@ -473,14 +473,14 @@ class _BenchmarkRun {
       "shader - step by step",
       "shader - all"
     ];
-
-    List<String> _shapeStep = [
-      "shape - rect",
-      "shape - bezier",
-      "shape - quadratic",
-      "shape - line",
-      "shape - arc"
-    ];
+//
+//    List<String> _shapeStep = [
+//      "shape - rect",
+//      "shape - bezier",
+//      "shape - quadratic",
+//      "shape - line",
+//      "shape - arc"
+//    ];
 
     List<String> _visibilityStep = [
       "visibility - out of scene",

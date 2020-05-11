@@ -21,7 +21,8 @@ class StagexlParticlesInterface extends StagexlInterface
 
   @override
   setParticles(ParticleEmitter particle, [num v]) {
-    particle.start();
+//    particle.start();
+    particle.advanceTime(v);
   }
 
   @override

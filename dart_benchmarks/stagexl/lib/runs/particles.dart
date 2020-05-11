@@ -35,7 +35,8 @@ class Particles1Benchmark implements BenchmarkBase {
     for (var bunny in _bunnies) {
       interface.setBrightness(bunny, rdm.nextDouble() * 2);
     }
-  }
+  }  Juggler juggler;
+
 }
 
 class Particles2Benchmark implements BenchmarkBase {
@@ -48,10 +49,9 @@ class Particles2Benchmark implements BenchmarkBase {
   List _particles = [];
   Random rdm = new Random();
 
-  Juggler juggler;
 
   Particles2Benchmark(this.interface, this.nbOfObjects, this.layout,
-      this.canvasWidth, this.canvasHeight,this.juggler) {
+      this.canvasWidth, this.canvasHeight) {
     var container = interface.createContainer();
     for (int i = -1; ++i < nbOfObjects;) {
       var particle = interface.createParticles(); //ParticleEmitter LightEmmiter
@@ -61,13 +61,24 @@ class Particles2Benchmark implements BenchmarkBase {
       _particles.add(particle);
     }
     interface.addChild(layout, container);
-    _particles.forEach((p) => juggler.add(p));
   }
 
+
+
+  num time = 0;
+
   eachFrameFunction([num v]) {
-    for (var particle in _particles) {
-      //ParticleEmitter
-//      interface.setParticles(particle, v);
+    if(v != null)
+    {
+      num delaTime = (v - time) / 1000;
+      print(delaTime);
+      time = v;
+
+      _particles.forEach((turtle)
+      {
+        turtle.advanceTime(delaTime);
+      });
     }
+
   }
 }
