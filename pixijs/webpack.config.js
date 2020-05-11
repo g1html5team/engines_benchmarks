@@ -1,8 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 const commonConfig = {
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080,
+    disableHostCheck: true,
+  },
   mode: 'development',
   devtool: 'inline-source-map',
   module: {
@@ -250,109 +256,115 @@ const examplesConfig = Object.assign({}, commonConfig, {
   },
 });
 
-const benchmarksConfig = Object.assign({}, commonConfig, {
-  name: 'benchmarks',
-  entry: {
-    benchmarks: './src/benchmarks/benchmarks.ts',
-    'run/add_remove_child': './src/benchmarks/run/add_remove_child.ts',
-    'run/filters': './src/benchmarks/run/filters.ts',
-    'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
-    'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
-    'run/atlas': './src/benchmarks/run/atlas.ts',
-    'run/flipbook': './src/benchmarks/run/flipbook.ts',
-    'run/particles': './src/benchmarks/run/particles.ts',
-    'run/render_texture': './src/benchmarks/run/render_texture.ts',
-    'run/shaders': './src/benchmarks/run/shaders.ts',
-  },
-  devServer: {
-    contentBase: './dist/benchmarks',
-  },
-  plugins: [
-    new CopyPlugin([
-      {
-        from: 'src/benchmarks/**/*.json',
-        to: './',
-        transformPath(targetPath) {
-          return targetPath.substring(15, targetPath.length);
+const benchmarksConfig = (env) =>
+  Object.assign({}, commonConfig, {
+    name: 'benchmarks',
+    entry: {
+      benchmarks: './src/benchmarks/benchmarks.ts',
+      'run/add_remove_child': './src/benchmarks/run/add_remove_child.ts',
+      'run/filters': './src/benchmarks/run/filters.ts',
+      'run/blend_mode': './src/benchmarks/run/blend_mode.ts',
+      'run/gpu_slots': './src/benchmarks/run/gpu_slots.ts',
+      'run/atlas': './src/benchmarks/run/atlas.ts',
+      'run/flipbook': './src/benchmarks/run/flipbook.ts',
+      'run/particles': './src/benchmarks/run/particles.ts',
+      'run/render_texture': './src/benchmarks/run/render_texture.ts',
+      'run/shaders': './src/benchmarks/run/shaders.ts',
+    },
+    devServer: {
+      contentBase: './dist/benchmarks',
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        RENDERER: env && env.RENDERER ? JSON.stringify(env.RENDERER) : JSON.stringify('webgl2'),
+      }),
+      new CopyPlugin([
+        {
+          from: 'src/benchmarks/**/*.json',
+          to: './',
+          transformPath(targetPath) {
+            return targetPath.substring(15, targetPath.length);
+          },
         },
-      },
-      {
-        from: 'src/benchmarks/**/*.png',
-        to: './',
-        transformPath(targetPath) {
-          return targetPath.substring(15, targetPath.length);
+        {
+          from: 'src/benchmarks/**/*.png',
+          to: './',
+          transformPath(targetPath) {
+            return targetPath.substring(15, targetPath.length);
+          },
         },
-      },
-      {
-        from: 'src/benchmarks/**/*.jpg',
-        to: './',
-        transformPath(targetPath) {
-          return targetPath.substring(15, targetPath.length);
+        {
+          from: 'src/benchmarks/**/*.jpg',
+          to: './',
+          transformPath(targetPath) {
+            return targetPath.substring(15, targetPath.length);
+          },
         },
-      },
-      {
-        from: 'src/benchmarks/**/*.png',
-        to: './',
-        transformPath(targetPath) {
-          return targetPath.substring(15, targetPath.length);
+        {
+          from: 'src/benchmarks/**/*.png',
+          to: './',
+          transformPath(targetPath) {
+            return targetPath.substring(15, targetPath.length);
+          },
         },
-      },
-    ]),
-    new HtmlWebpackPlugin({
-      title: 'PixiJS - Benchmarks',
-      template: './src/benchmarks/benchmarks.html',
-      chunks: ['benchmarks'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/add_remove_child.html',
-      title: 'Benchmark - Add remove child',
-      chunks: ['run/add_remove_child'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/filters.html',
-      title: 'Benchmark - Filters',
-      chunks: ['run/filters'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/blend_mode.html',
-      title: 'Benchmark - Blend mode',
-      chunks: ['run/blend_mode'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/gpu_slots.html',
-      title: 'Benchmark - GPU slots',
-      chunks: ['run/gpu_slots'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/atlasses.html',
-      title: 'Benchmark - Atlas',
-      chunks: ['run/atlas'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/flipbook.html',
-      title: 'Benchmark - Flipbook',
-      chunks: ['run/flipbook'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/particles.html',
-      title: 'Benchmark - Particles',
-      chunks: ['run/particles'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/render_texture.html',
-      title: 'Benchmark - Render texture',
-      chunks: ['run/render_texture'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'run/shaders.html',
-      title: 'Benchmark - Shaders',
-      chunks: ['run/shaders'],
-    }),
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist/benchmarks'),
-  },
-});
+      ]),
+      new HtmlWebpackPlugin({
+        title: 'PixiJS - Benchmarks',
+        template: './src/benchmarks/benchmarks.html',
+        chunks: ['benchmarks'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/add_remove_child.html',
+        title: 'Benchmark - Add remove child',
+        chunks: ['run/add_remove_child'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/filters.html',
+        title: 'Benchmark - Filters',
+        chunks: ['run/filters'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/blend_mode.html',
+        title: 'Benchmark - Blend mode',
+        chunks: ['run/blend_mode'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/gpu_slots.html',
+        title: 'Benchmark - GPU slots',
+        chunks: ['run/gpu_slots'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/atlasses.html',
+        title: 'Benchmark - Atlas',
+        chunks: ['run/atlas'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/flipbook.html',
+        title: 'Benchmark - Flipbook',
+        chunks: ['run/flipbook'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/particles.html',
+        title: 'Benchmark - Particles',
+        chunks: ['run/particles'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/render_texture.html',
+        title: 'Benchmark - Render texture',
+        chunks: ['run/render_texture'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/shaders.html',
+        title: 'Benchmark - Shaders',
+        chunks: ['run/shaders'],
+      }),
+    ],
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist/benchmarks'),
+    },
+  });
 
-module.exports = [homeConfig, examplesConfig, benchmarksConfig];
+module.exports = (env) => {
+  return [homeConfig, examplesConfig, benchmarksConfig(env)];
+};

@@ -6,6 +6,7 @@
     "axios": "^0.19.2",
     "pixi-spine": "^2.0.5",
     "pixi.js": "^5.2.1",
+    "pixi.js-legacy": "^5.2.4",
     "toastr": "^2.1.4",
     "uuid": "^7.0.3"
   },
@@ -36,8 +37,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "del-cli dist && webpack",
-    "start": "del-cli dist && webpack-dev-server --open"
+    "build": "del-cli dist && webpack --env.RENDERER=webgl2",
+    "build-webgl1": "del-cli dist && webpack --env.RENDERER=webgl1",
+    "start": "del-cli dist && webpack-dev-server --open --host 0.0.0.0 --public 192.168.1.2:8080"
   },
   "repository": {
     "type": "git",

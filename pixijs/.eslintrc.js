@@ -23,5 +23,6 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'error',
     'no-param-reassign': ['error', { props: false }],
     'no-await-in-loop': 'off',
+    'operator-linebreak': 'off',
   },
 };

@@ -7,6 +7,8 @@ import 'toastr/build/toastr.min.css';
 import { BenchmarkConfig } from './model/benchmark_config';
 import { ConfigResponse } from './model/response';
 
+declare const RENDERER: string;
+
 class Benchmarks {
   private readonly client: AxiosInstance = Axios.create();
   private readonly serverURL: string;
@@ -89,7 +91,7 @@ class Benchmarks {
           const { data } = lastResponse;
           const subtitle = document.querySelector('.benchmarks-subtitle');
           subtitle.classList.remove('hidden');
-          subtitle.textContent = `${data.engine.toUpperCase()} - ${data.step} - ${data.parameter}`;
+          subtitle.textContent = `${data.engine.toUpperCase()} (${RENDERER}) - ${data.step} - ${data.parameter}`;
 
           // Create iframe
           // We don't use data.baseUrl as it points to server and then would serve original benchmarks
