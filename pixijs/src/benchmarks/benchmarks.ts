@@ -4,8 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import Axios, { AxiosInstance, AxiosResponse } from 'axios';
 import * as Toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
-import { BenchmarkConfig } from './model/benchmark_info';
+import { BenchmarkConfig } from './model/benchmark_config';
 import { ConfigResponse } from './model/response';
+
+declare const RENDERER: string;
 
 class Benchmarks {
   private readonly client: AxiosInstance = Axios.create();
@@ -24,23 +26,23 @@ class Benchmarks {
       runDuration: Benchmarks.getElementValue('duration'),
       canvasWidth: Benchmarks.getElementValue('width'),
       canvasHeight: Benchmarks.getElementValue('height'),
-      runChildren: Benchmarks.getElementValue('children'),
-      runLabels: Benchmarks.getElementValue('labels'),
-      runFilters: Benchmarks.getElementValue('filters'),
-      runMasks: Benchmarks.getElementValue('masks'),
-      runBlendMode: Benchmarks.getElementValue('blend'),
-      runGpuSlot: Benchmarks.getElementValue('gpu'),
-      runAtlas: Benchmarks.getElementValue('atlas'),
-      runFlipbook: Benchmarks.getElementValue('flipbook'),
-      runParticles: Benchmarks.getElementValue('particles'),
-      runRenderTexture: Benchmarks.getElementValue('texture'),
-      runShader: Benchmarks.getElementValue('shader'),
-      runSpine: Benchmarks.getElementValue('spine'),
-      runVisibility: Benchmarks.getElementValue('visibility'),
-      runZindex: Benchmarks.getElementValue('zindex'),
-      runStageXl: 'false',
-      runPixi: 'true',
-      runNg1n: 'false',
+      children: Benchmarks.getElementValue('children'),
+      labels: Benchmarks.getElementValue('labels'),
+      filters: Benchmarks.getElementValue('filters'),
+      masks: Benchmarks.getElementValue('masks'),
+      blend: Benchmarks.getElementValue('blend'),
+      gpu: Benchmarks.getElementValue('gpu'),
+      atlas: Benchmarks.getElementValue('atlas'),
+      flipbook: Benchmarks.getElementValue('flipbook'),
+      particles: Benchmarks.getElementValue('particles'),
+      render_texture: Benchmarks.getElementValue('texture'),
+      shader: Benchmarks.getElementValue('shader'),
+      spine: Benchmarks.getElementValue('spine'),
+      visibility: Benchmarks.getElementValue('visibility'),
+      zindex: Benchmarks.getElementValue('zindex'),
+      stagexl: 'false',
+      ng1n: 'false',
+      pixi: 'true',
     };
 
     this.serverURL = `http://${this.config.serverIp}:${this.config.serverPort}`;
@@ -84,14 +86,12 @@ class Benchmarks {
 
         let lastResponse = response as AxiosResponse<ConfigResponse>;
 
-        const limit = 5;
-        let cnt = 0;
-        while (lastResponse.status === 200 && cnt++ < limit) {
+        while (lastResponse.status === 200) {
           const capturedWindow = window;
           const { data } = lastResponse;
           const subtitle = document.querySelector('.benchmarks-subtitle');
           subtitle.classList.remove('hidden');
-          subtitle.textContent = `${data.engine.toUpperCase()} - ${data.step} - ${data.parameter}`;
+          subtitle.textContent = `${data.engine.toUpperCase()} (${RENDERER}) - ${data.step} - ${data.parameter}`;
 
           // Create iframe
           // We don't use data.baseUrl as it points to server and then would serve original benchmarks

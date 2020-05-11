@@ -17,7 +17,7 @@ let benchmark: Benchmark;
 
 switch (benchmarkId) {
   case 1: {
-    // Simple add benchmark
+    // Filter brightness benchmark
     benchmark = new FilterBrightnessBenchmark(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
@@ -27,7 +27,7 @@ switch (benchmarkId) {
     break;
   }
   case 2: {
-    // Simple add remove benchmark
+    // Filter hue benchmark
     benchmark = new FilterHueBenchmark(width, height, numberOfObjects);
     benchmark.init().then(() => {
       benchmark.run().then((result) => {
