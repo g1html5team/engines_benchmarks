@@ -110,7 +110,6 @@ class StagexlSpinesBenchmark implements BenchmarkBase {
     if(v != null)
       {
         num delaTime = (v - time) / 1000;
-        print(delaTime);
         time = v;
 
         _animatedObjects.forEach((turtle)

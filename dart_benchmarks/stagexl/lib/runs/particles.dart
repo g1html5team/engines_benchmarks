@@ -71,7 +71,6 @@ class Particles2Benchmark implements BenchmarkBase {
     if(v != null)
     {
       num delaTime = (v - time) / 1000;
-      print(delaTime);
       time = v;
 
       _particles.forEach((turtle)
