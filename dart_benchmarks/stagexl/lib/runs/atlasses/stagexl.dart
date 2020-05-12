@@ -443,8 +443,8 @@ class StagexlAtlasImagesFrom3DifferentAtlasWith100BitmapBenchmark
       this.nbOfObjects, this.layout, this.canvasWidth, this.canvasHeight);
 
   init() async {
-//    await assetLoader.load(BenchmarkAtlassesAssets.loader);
-//    assets = BenchmarkAtlassesAssets.loader.instance;
+    assets = BenchmarkAtlassesAssets();
+    await assets.loadAssets();
     for (int i = 0; i < bitmaps.length; i++) {
       bitmaps[i] = interface.createBitmap(assets.imgsAtlas50a[0]);
       int row = i ~/ 10 * (canvasWidth ~/ 10);

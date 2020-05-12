@@ -14,7 +14,7 @@ main() async {
     params = new Map();
     params['engine'] = 'stagexl'; //ng1n stagexl pixi
     params['nbObj'] = '20';
-    params['id'] = '1';
+    params['id'] = '2';
     params['cw'] = '1280';
     params['ch'] = '720';
   }

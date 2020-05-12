@@ -18,20 +18,22 @@ class PixiParticlesInterface extends PixiInterface
   }
 
   @override
-  setParticles(Container particles, [num v]) {
-    if (base == 0) {
-      base = v;
-    } else {
-      // num scale = ((v - base) / 1000);
-      for (Graphics particle in particles.children) {
+  setParticles(DisplayObject particle, [num v]) {
+
+if(v != 0)
+  {
+
+       num scale = ((v - base) / 1000);
         particle.x *= 1.1;
-        /*
-      particles.rotation += 0.1;
-      particles.scale = new Point(scale,scale);
-      particles.position = new Point((particles.position.x),  particles.position.y );
-      */
-      }
-    }
+//        particle.localTransform = (1, 1);
+
+      particle.rotation += 0.1;
+      particle.scale = new Point(scale,scale);
+  }
+
+//      }
+//    }
+
 // particle.getGlobalPosition().x : la position dans la scene
 // particle.localTransform.tx : 0 au début: position d'origine idem particle.x
   }

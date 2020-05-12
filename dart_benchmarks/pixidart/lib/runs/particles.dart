@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:pixi_dart_benchmark/benchmarks/common.dart';
 import 'package:pixi_dart_benchmark/benchmarks/custom/particles/interfaces/common.dart';
+import 'package:pixi_dart_benchmark/runs/particle_facade.dart';
 
 class Particles1Benchmark implements BenchmarkBase {
   final int canvasWidth;
@@ -57,14 +58,14 @@ class Particles2Benchmark implements BenchmarkBase {
       interface.setY(particle, rdm.nextInt(canvasHeight));
       _particles.add(particle);
     }
-
+    createParticle(layout);
     interface.addChild(layout, container);
   }
 
   eachFrameFunction([num v]) {
-    for (var particle in _particles) {
-      //ParticleEmitter
+    _particles.forEach((particle)
+    {
       interface.setParticles(particle, v);
-    }
+    });
   }
 }
