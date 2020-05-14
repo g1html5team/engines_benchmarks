@@ -270,6 +270,7 @@ const benchmarksConfig = (env) =>
       'run/particles': './src/benchmarks/run/particles.ts',
       'run/render_texture': './src/benchmarks/run/render_texture.ts',
       'run/shaders': './src/benchmarks/run/shaders.ts',
+      'run/spine': './src/benchmarks/run/spine.ts',
       'run/visibility': './src/benchmarks/run/visibility.ts',
       'run/zindex': './src/benchmarks/run/zindex.ts',
     },
@@ -359,6 +360,11 @@ const benchmarksConfig = (env) =>
         filename: 'run/shaders.html',
         title: 'Benchmark - Shaders',
         chunks: ['run/shaders'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/spines.html',
+        title: 'Benchmark - Spine',
+        chunks: ['run/spine'],
       }),
       new HtmlWebpackPlugin({
         filename: 'run/visibility.html',

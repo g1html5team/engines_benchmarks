@@ -1,8 +1,6 @@
 import '../../../canvas.css';
-import '../utils/global_pixi';
+import '../../../utils/global_pixi';
 import 'pixi-spine';
-
-window.PIXI = PIXI;
 
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
