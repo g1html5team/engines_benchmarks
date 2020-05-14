@@ -82,6 +82,8 @@ const examplesConfig = Object.assign({}, commonConfig, {
     masks_filter: './src/examples/examples/masks/filter.ts',
     dragon: './src/examples/examples/spine/dragon.ts',
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
+    webgl1: './src/examples/examples/fallback/webgl1.ts',
+    canvas: './src/examples/examples/fallback/canvas.ts',
   },
   devServer: {
     contentBase: './dist',
@@ -248,6 +250,16 @@ const examplesConfig = Object.assign({}, commonConfig, {
       filename: 'spineboy_pro.html',
       title: 'PixiJS - Spineboy Pro',
       chunks: ['spineboy_pro'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'webgl1.html',
+      title: 'PixiJS - WebGL 1',
+      chunks: ['webgl1'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'canvas.html',
+      title: 'PixiJS - WebGL 1',
+      chunks: ['canvas'],
     }),
   ],
   output: {
