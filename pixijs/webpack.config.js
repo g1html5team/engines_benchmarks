@@ -270,6 +270,7 @@ const benchmarksConfig = (env) =>
       'run/particles': './src/benchmarks/run/particles.ts',
       'run/render_texture': './src/benchmarks/run/render_texture.ts',
       'run/shaders': './src/benchmarks/run/shaders.ts',
+      'run/visibility': './src/benchmarks/run/visibility.ts',
     },
     devServer: {
       contentBase: './dist/benchmarks',
@@ -357,6 +358,11 @@ const benchmarksConfig = (env) =>
         filename: 'run/shaders.html',
         title: 'Benchmark - Shaders',
         chunks: ['run/shaders'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/visibility.html',
+        title: 'Benchmark - Visibility',
+        chunks: ['run/visibility'],
       }),
     ],
     output: {

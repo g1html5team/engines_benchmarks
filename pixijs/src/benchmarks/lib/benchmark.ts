@@ -65,7 +65,7 @@ export abstract class Benchmark {
     }
 
     this.app.ticker.add(() => {
-      this.eachFrameCallback();
+      this.eachFrameCallback(this.app.ticker.deltaTime, this.app.ticker.lastTime);
       this.frameDurations.push(this.app.ticker.elapsedMS);
     });
 
@@ -79,7 +79,7 @@ export abstract class Benchmark {
     });
   }
 
-  protected abstract eachFrameCallback(deltaTime?: number): void;
+  protected abstract eachFrameCallback(deltaTime?: number, lastTime?: number): void;
 
   private processResult(): BenchmarkResult {
     const frameDurationsSum = this.frameDurations.reduce((previousValue, currentValue) => previousValue + currentValue);
