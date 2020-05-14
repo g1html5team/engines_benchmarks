@@ -13,7 +13,7 @@ const app = new PIXI.Application({
 
 document.body.appendChild(app.view);
 
-const text = new PIXI.Text(`Using WegGL ${app.renderer.context.webGLVersion}`);
+const text = new PIXI.Text(`Using WegGL ${(app.renderer.context as PIXI.systems.ContextSystem).webGLVersion}`);
 app.stage.addChild(text);
 
 const container = new PIXI.Container();

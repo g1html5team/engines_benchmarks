@@ -1,4 +1,4 @@
-import * as PIXI from 'pixi.js';
+import * as PIXI from 'pixi.js-legacy';
 import { BenchmarkResult } from '../model/benchmark_result';
 
 declare const RENDERER: string;
@@ -11,17 +11,10 @@ export abstract class Benchmark {
   private incorrectRenderer = false;
 
   protected constructor(width: number, height: number) {
-    let preferredWebGLVersion = 2;
-    switch (RENDERER) {
-      case 'webgl1':
-        PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL;
-        preferredWebGLVersion = 1;
-        break;
-      case 'canvas':
-        // TODO (sch)
-        break;
-      default:
-        PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL2;
+    if (RENDERER === 'webgl2') {
+      PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL2;
+    } else if (RENDERER === 'webgl1') {
+      PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL;
     }
 
     this.app = new PIXI.Application({
@@ -30,13 +23,20 @@ export abstract class Benchmark {
       resolution: window.devicePixelRatio,
       autoDensity: true,
       autoStart: false,
+      forceCanvas: RENDERER === 'canvas',
     });
 
-    if (
-      this.app.renderer.type === PIXI.RENDERER_TYPE.WEBGL &&
-      this.app.renderer.context.webGLVersion !== preferredWebGLVersion
-    ) {
-      window.alert(`Couldn't use WebGL ${preferredWebGLVersion}`);
+    if (RENDERER === 'webgl2' || RENDERER === 'webgl1') {
+      const preferredWebGLVersion = RENDERER === 'webgl2' ? 2 : 1;
+      if (
+        this.app.renderer.type !== PIXI.RENDERER_TYPE.WEBGL ||
+        (this.app.renderer.context as PIXI.systems.ContextSystem).webGLVersion !== preferredWebGLVersion
+      ) {
+        window.alert(`Couldn't use WebGL ${preferredWebGLVersion}`);
+        this.incorrectRenderer = true;
+      }
+    } else if (RENDERER === 'canvas' && this.app.renderer.type !== PIXI.RENDERER_TYPE.CANVAS) {
+      window.alert("Couldn't use canvas");
       this.incorrectRenderer = true;
     }
 

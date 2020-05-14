@@ -12,7 +12,9 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 
 const text = new PIXI.Text(
-  app.renderer.type === PIXI.RENDERER_TYPE.CANVAS ? 'Using canvas' : `Using WegGL ${app.renderer.context.webGLVersion}`,
+  app.renderer.type === PIXI.RENDERER_TYPE.CANVAS
+    ? 'Using canvas'
+    : `Using WegGL ${(app.renderer.context as PIXI.systems.ContextSystem).webGLVersion}`,
 );
 app.stage.addChild(text);
 
