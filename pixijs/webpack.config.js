@@ -271,6 +271,7 @@ const benchmarksConfig = (env) =>
       'run/render_texture': './src/benchmarks/run/render_texture.ts',
       'run/shaders': './src/benchmarks/run/shaders.ts',
       'run/visibility': './src/benchmarks/run/visibility.ts',
+      'run/zindex': './src/benchmarks/run/zindex.ts',
     },
     devServer: {
       contentBase: './dist/benchmarks',
@@ -363,6 +364,11 @@ const benchmarksConfig = (env) =>
         filename: 'run/visibility.html',
         title: 'Benchmark - Visibility',
         chunks: ['run/visibility'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'run/zindex.html',
+        title: 'Benchmark - ZIndex',
+        chunks: ['run/zindex'],
       }),
     ],
     output: {
