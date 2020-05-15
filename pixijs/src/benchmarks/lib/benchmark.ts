@@ -77,7 +77,7 @@ export abstract class Benchmark {
           firstFrameTime = this.app.ticker.lastTime;
         }
 
-        this.eachFrameCallback(this.app.ticker.deltaTime, this.app.ticker.lastTime);
+        this.eachFrameCallback(this.app.ticker.deltaTime, this.app.ticker.lastTime - firstFrameTime);
         this.frameDurations.push(this.app.ticker.elapsedMS);
 
         if (this.app.ticker.lastTime - firstFrameTime >= this.benchmarkDuration * 1000) {
@@ -90,15 +90,12 @@ export abstract class Benchmark {
     });
   }
 
-  protected abstract eachFrameCallback(deltaTime?: number, lastTime?: number): void;
+  protected abstract eachFrameCallback(deltaTime?: number, timeSinceStart?: number): void;
 
   private processResult(): BenchmarkResult {
     const frameDurationsSum = this.frameDurations.reduce((previousValue, currentValue) => previousValue + currentValue);
     const averageFrameDuration = frameDurationsSum / this.frameDurations.length;
     const fps = Math.min(this.frameDurations.length / this.benchmarkDuration, 60);
-
-    console.log(`averageFrameDuration = ${averageFrameDuration}`);
-    console.log(`fps = ${this.frameDurations.length / this.benchmarkDuration}`);
 
     return new BenchmarkResult(averageFrameDuration, fps);
   }
