@@ -8,15 +8,17 @@ export abstract class Benchmark {
   private frameDurations: number[] = [];
   protected app: PIXI.Application;
   protected assetsToLoad: Map<string, string> = new Map();
-  private incorrectRenderer = false;
+  private readonly incorrectRenderer: boolean = false;
 
   protected constructor(width: number, height: number) {
+    // Force preferred renderer based on environment variable RENDERER
     if (RENDERER === 'webgl2') {
       PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL2;
     } else if (RENDERER === 'webgl1') {
       PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL;
     }
 
+    // Create the pixi application
     this.app = new PIXI.Application({
       width,
       height,
@@ -26,6 +28,7 @@ export abstract class Benchmark {
       forceCanvas: RENDERER === 'canvas',
     });
 
+    // Check if the app runs the desired renderer
     if (RENDERER === 'webgl2' || RENDERER === 'webgl1') {
       const preferredWebGLVersion = RENDERER === 'webgl2' ? 2 : 1;
       if (
@@ -64,18 +67,26 @@ export abstract class Benchmark {
       return Promise.resolve(null);
     }
 
-    this.app.ticker.add(() => {
-      this.eachFrameCallback(this.app.ticker.deltaTime, this.app.ticker.lastTime);
-      this.frameDurations.push(this.app.ticker.elapsedMS);
-    });
+    let firstFrame = true;
+    let firstFrameTime = 0;
 
     return new Promise((resolve) => {
-      this.app.start();
+      this.app.ticker.add(() => {
+        if (firstFrame) {
+          firstFrame = false;
+          firstFrameTime = this.app.ticker.lastTime;
+        }
 
-      setTimeout(() => {
-        this.app.stop();
-        resolve(this.processResult());
-      }, this.benchmarkDuration * 1000);
+        this.eachFrameCallback(this.app.ticker.deltaTime, this.app.ticker.lastTime);
+        this.frameDurations.push(this.app.ticker.elapsedMS);
+
+        if (this.app.ticker.lastTime - firstFrameTime >= this.benchmarkDuration * 1000) {
+          this.app.stop();
+          resolve(this.processResult());
+        }
+      });
+
+      this.app.start();
     });
   }
 
@@ -85,6 +96,9 @@ export abstract class Benchmark {
     const frameDurationsSum = this.frameDurations.reduce((previousValue, currentValue) => previousValue + currentValue);
     const averageFrameDuration = frameDurationsSum / this.frameDurations.length;
     const fps = Math.min(this.frameDurations.length / this.benchmarkDuration, 60);
+
+    console.log(`averageFrameDuration = ${averageFrameDuration}`);
+    console.log(`fps = ${this.frameDurations.length / this.benchmarkDuration}`);
 
     return new BenchmarkResult(averageFrameDuration, fps);
   }
