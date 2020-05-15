@@ -97,6 +97,9 @@ export abstract class Benchmark {
     const averageFrameDuration = frameDurationsSum / this.frameDurations.length;
     const fps = Math.min(this.frameDurations.length / this.benchmarkDuration, 60);
 
+    console.log(`averageFrameDuration = ${averageFrameDuration}`);
+    console.log(`fps = ${this.frameDurations.length / this.benchmarkDuration}`);
+
     return new BenchmarkResult(averageFrameDuration, fps);
   }
 }

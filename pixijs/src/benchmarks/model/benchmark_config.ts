@@ -10,7 +10,7 @@ export interface BenchmarkConfig {
   canvasHeight: string;
   children: string;
   labels: string;
-  filters: string;
+  filter: string;
   masks: string;
   blend: string;
   gpu: string;

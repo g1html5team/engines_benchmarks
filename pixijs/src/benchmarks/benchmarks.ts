@@ -28,7 +28,7 @@ class Benchmarks {
       canvasHeight: Benchmarks.getElementValue('height'),
       children: Benchmarks.getElementValue('children'),
       labels: Benchmarks.getElementValue('labels'),
-      filters: Benchmarks.getElementValue('filters'),
+      filter: Benchmarks.getElementValue('filters'),
       masks: Benchmarks.getElementValue('masks'),
       blend: Benchmarks.getElementValue('blend'),
       gpu: Benchmarks.getElementValue('gpu'),
