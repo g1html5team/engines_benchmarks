@@ -3,7 +3,7 @@
 ## Configuration
 
 ### Installer NodeJS et NPM
-Afin de tester l'environnement, vous devez avoir NodeJS et NPM installé sur votre machine.  
+Afin de tester l'environnement, vous devez avoir NodeJS et NPM installés sur votre machine.  
 Ces deux outils peuvent être installés via l'[installateur de NodeJS](https://nodejs.org/en/download/).
 
 ### Installer les dépendances
@@ -52,7 +52,7 @@ TypeScript est compilé en JavaScript avant d'être interprété par le browser.
 
 - ~~Ajouter un linter (https://eslint.org/blog/2019/01/future-typescript-eslint)~~
 - Optimiser webpack (https://webpack.js.org/guides/build-performance/#typescript-loader)
-- Gérer la mise en production (https://webpack.js.org/guides/production/)
+- ~~Gérer la mise en production (https://webpack.js.org/guides/production/)~~
 - Comparer Parcel et Webpack (https://parceljs.org/)
 - Resizer automatiquement le canvas
 - Ajouter des tests unitaires (https://jestjs.io/, https://mochajs.org/, https://jasmine.github.io/, https://www.chaijs.com/)
