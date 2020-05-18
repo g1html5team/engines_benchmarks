@@ -4,13 +4,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const commonConfig = {
-  devServer: {
-    host: '0.0.0.0',
-    port: 8080,
-    disableHostCheck: true,
-  },
-  mode: 'development',
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -37,9 +30,6 @@ const homeConfig = Object.assign({}, commonConfig, {
   name: 'home',
   entry: {
     home: './src/home.ts',
-  },
-  devServer: {
-    contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -84,9 +74,6 @@ const examplesConfig = Object.assign({}, commonConfig, {
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
     webgl1: './src/examples/examples/fallback/webgl1.ts',
     canvas: './src/examples/examples/fallback/canvas.ts',
-  },
-  devServer: {
-    contentBase: './dist',
   },
   plugins: [
     new CopyPlugin([
@@ -285,9 +272,6 @@ const benchmarksConfig = (env) =>
       'run/spine': './src/benchmarks/run/spine.ts',
       'run/visibility': './src/benchmarks/run/visibility.ts',
       'run/zindex': './src/benchmarks/run/zindex.ts',
-    },
-    devServer: {
-      contentBase: './dist/benchmarks',
     },
     plugins: [
       new webpack.DefinePlugin({
