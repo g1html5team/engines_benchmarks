@@ -4,6 +4,7 @@
   "description": "Environnement de test pour TypeScript + PixiJs",
   "dependencies": {
     "axios": "^0.19.2",
+    "pixi-particles": "^4.2.1",
     "pixi-spine": "^2.0.5",
     "pixi.js": "^5.2.4",
     "pixi.js-legacy": "^5.2.4",
@@ -42,8 +43,8 @@
     "build-webgl1": "del-cli dist && webpack --config webpack.prod.js --env.RENDERER=webgl1",
     "build-canvas": "del-cli dist && webpack --config webpack.prod.js --env.RENDERER=canvas",
     "start": "del-cli dist && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --public 192.168.1.2:8080 --env.RENDERER=webgl2",
-    "start-webgl1": "del-cli dist && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --public 192.168.1.2:8081 --env.RENDERER=webgl1",
-    "start-canvas": "del-cli dist && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --public 192.168.1.2:8082 --env.RENDERER=canvas"
+    "start-webgl1": "del-cli dist && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --public 192.168.1.2:8080 --env.RENDERER=webgl1",
+    "start-canvas": "del-cli dist && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --public 192.168.1.2:8080 --env.RENDERER=canvas"
   },
   "repository": {
     "type": "git",
