@@ -25,6 +25,6 @@ export interface BenchmarkConfig {
   stagexl?: string;
   stagexl_canvas?: string;
   ng1n?: string;
-  pixi?: string;
+  'pixi-dart1-internal'?: string;
   pixi_typescript_external?: string;
 }

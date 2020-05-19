@@ -9,6 +9,7 @@ export abstract class Benchmark {
   protected app: PIXI.Application;
   protected assetsToLoad: Map<string, string> = new Map();
   private readonly incorrectRenderer: boolean = false;
+  private errorMessage = '';
 
   protected constructor(width: number, height: number) {
     // Force preferred renderer based on environment variable RENDERER
@@ -35,11 +36,11 @@ export abstract class Benchmark {
         this.app.renderer.type !== PIXI.RENDERER_TYPE.WEBGL ||
         (this.app.renderer.context as PIXI.systems.ContextSystem).webGLVersion !== preferredWebGLVersion
       ) {
-        window.alert(`Couldn't use WebGL ${preferredWebGLVersion}`);
+        this.errorMessage = `Couldn't use WebGL ${preferredWebGLVersion}`;
         this.incorrectRenderer = true;
       }
     } else if (RENDERER === 'canvas' && this.app.renderer.type !== PIXI.RENDERER_TYPE.CANVAS) {
-      window.alert("Couldn't use canvas");
+      this.errorMessage = "Couldn't use canvas";
       this.incorrectRenderer = true;
     }
 
@@ -47,10 +48,6 @@ export abstract class Benchmark {
   }
 
   public async init(): Promise<void> {
-    if (this.incorrectRenderer) {
-      return Promise.resolve();
-    }
-
     this.assetsToLoad.forEach((value, key) => {
       this.app.loader.add(key, value);
     });
@@ -64,7 +61,15 @@ export abstract class Benchmark {
 
   public async run(): Promise<BenchmarkResult> {
     if (this.incorrectRenderer) {
-      return Promise.resolve(null);
+      document.body.removeChild(this.app.view);
+      const errorSpan = document.createElement('span');
+      errorSpan.innerText = this.errorMessage;
+      errorSpan.style.color = 'red';
+      document.body.appendChild(errorSpan);
+
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(new BenchmarkResult(0, 0)), 2000);
+      });
     }
 
     let firstFrame = true;

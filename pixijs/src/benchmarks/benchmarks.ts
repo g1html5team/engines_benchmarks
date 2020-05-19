@@ -42,7 +42,7 @@ class Benchmarks {
       zindex: Benchmarks.getElementValue('zindex'),
       stagexl: 'false',
       ng1n: 'false',
-      pixi: 'true',
+      'pixi-dart1-internal': 'true',
     };
 
     this.serverURL = `http://${this.config.serverIp}:${this.config.serverPort}`;
