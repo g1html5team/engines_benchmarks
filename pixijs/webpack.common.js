@@ -74,6 +74,7 @@ const examplesConfig = Object.assign({}, commonConfig, {
     spineboy_pro: './src/examples/examples/spine/spineboy_pro.ts',
     webgl1: './src/examples/examples/fallback/webgl1.ts',
     canvas: './src/examples/examples/fallback/canvas.ts',
+    particles: './src/examples/examples/particles/particles.ts',
   },
   plugins: [
     new CopyPlugin([
@@ -247,6 +248,11 @@ const examplesConfig = Object.assign({}, commonConfig, {
       filename: 'canvas.html',
       title: 'PixiJS - WebGL 1',
       chunks: ['canvas'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'particles.html',
+      title: 'PixiJS - Particles',
+      chunks: ['particles'],
     }),
   ],
   output: {
