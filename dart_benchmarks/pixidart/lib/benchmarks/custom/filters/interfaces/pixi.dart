@@ -7,7 +7,13 @@ class PixiFilterInterface extends PixiInterface implements FilterInterface {
   PixiFilterInterface() : super();
 
   setBrightness(DisplayObject object, num value) {
-    object.filters = [new ColorMatrixFilter()..brightness(value, false)];
+
+
+    ColorMatrixFilter f = new ColorMatrixFilter();
+    f.brightness(value, false);
+
+    object.filters = [f];
+
   }
 
   setHue(DisplayObject object, num value) {

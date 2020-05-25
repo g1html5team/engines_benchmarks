@@ -3,7 +3,6 @@ function createSpine(loader, name){
 }
 function getTextureAtlas(textures){
     var atlas = new PIXI.spine.core.TextureAtlas();
-    console.log(textures);
 
     var customSpineAtlas = {
         "images/game5/game5/carapace": (getTextureFrom("carapace")),

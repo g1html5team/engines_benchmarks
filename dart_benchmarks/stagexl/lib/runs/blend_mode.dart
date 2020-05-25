@@ -23,7 +23,7 @@ class BlendModeBenchmark implements BenchmarkBase {
     var container = interface.createContainer();
 
     var backgroundData1 = interface.createBitmapData(
-        querySelector('#background_b'), 'images/background_b.jpg');
+        querySelector('#background_b'), '../assets/background_b.jpg');
     background1 = interface.createBitmap(backgroundData1);
     interface.setBlendMode(
         background1,
@@ -33,11 +33,11 @@ class BlendModeBenchmark implements BenchmarkBase {
     interface.addChild(container, background1);
 
     var bunnyData =
-        interface.createBitmapData(querySelector('#bunny'), 'images/bunny.png');
+        interface.createBitmapData(querySelector('#bunny'), '../assets/bunny.png');
 
     //Add another big blended images over
     var backgroundData2 = interface.createBitmapData(
-        querySelector('#background_a'), 'images/background_a.jpg');
+        querySelector('#background_a'), '../assets/background_a.jpg');
     background2 = interface.createBitmap(backgroundData2);
     interface.setBlendMode(
         background2,
@@ -65,7 +65,7 @@ class BlendModeBenchmark implements BenchmarkBase {
 
     //Add another big blended images over all
     var backgroundData3 = interface.createBitmapData(
-        querySelector('#background_b'), 'images/background_b.jpg');
+        querySelector('#background_b'), '../assets/background_b.jpg');
     background3 = interface.createBitmap(backgroundData3);
     interface.setBlendMode(
         background3,
