@@ -32,7 +32,7 @@ main() async {
     params = new Map();
     params['engine'] = 'stagexl';
     params['nbObj'] = '300';
-    params['id'] = '6';
+    params['id'] = '2';
     params['cw'] = '1280';
     params['ch'] = '720';
   }

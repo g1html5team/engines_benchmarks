@@ -21,7 +21,7 @@ class GPUSlotsOverflowBenchmark implements BenchmarkBase {
 
     for (String imageName in getImageNames()) {
       var data = interface.createBitmapData(
-          querySelector('#$imageName'), './images/$imageName.png');
+          querySelector('#$imageName'), '../assets/characters/$imageName.png');
       var bitmap = interface.createBitmap(data);
       interface.addChild(container, bitmap);
       interface.setX(bitmap, rdm.nextInt(canvasWidth));

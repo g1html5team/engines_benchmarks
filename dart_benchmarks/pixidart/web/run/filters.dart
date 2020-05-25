@@ -14,7 +14,7 @@ main() async {
     params = new Map();
     params['engine'] = 'pixi';
     params['nbObj'] = '150';
-    params['id'] = '2';
+    params['id'] = '1';
     params['cw'] = '1280';
     params['ch'] = '720';
   }
